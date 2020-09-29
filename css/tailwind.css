@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-spoqa;
+  }
+
+  .program-list p {
+    /* @apply font-light; */
+    @apply py-5;
+  }
+
+  .program-flyer p {
+    /* @apply font-light; */
+    @apply py-5;
+    @apply text-lg;
+  }
+
+  .webzine-article p {
+    @apply font-jejumyeongjo;
+    @apply font-light;
+    @apply py-5;
+  }
+
+  .footnotes {
+    @apply text-base;
+  }
+
+  .footnotes ol li p {
+    @apply font-spoqa;
+    @apply leading-8;
+  }
+
+  .footnotes ol li a::after {
+    content:"\a";
+    white-space: pre;
+  }
+}

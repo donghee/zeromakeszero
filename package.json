@@ -1,0 +1,19 @@
+{
+  "name": "zeroart",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+      "tailwind": "postcss css/tailwind.css -o static/css/tailwind.css",
+      "hugo": "hugo"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^8.0.0",
+    "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,44 @@
+      <header class="lg:flex xl:max-w-screen-xl m-auto items-end justify-between p-6">
+        <div class="hidden lg:flex lg:flex-row">
+          <a class="p-1" href="https://www.instagram.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/instagram.svg">
+          </a>
+          <a class="p-1" href="https://www.facebook.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/facebook.svg">
+          </a>
+          <a class="p-1" href="https://twitter.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/twitter.svg" alt="twitter">
+          </a>
+          <a class="p-1" href="http://pf.kakao.com/_vPxadK" target="_blank">
+            <img class="h-8" src="/images/kakaotalk.svg" alt="Kakaotalk" >
+          </a>
+          <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>
+        </div>
+        <div class="flex flex-row justify-between">
+          <div>
+            <a href="/">
+              <!-- <img class="h-8" src="/images/logo.svg" alt="Zero Makes Zero"> -->
+              <img class="h-10 md:h-10" src="/images/zeromakeszero-logo.svg" alt="Zero Makes Zero">
+            </a>
+          </div>
+
+         <div class="block lg:hidden">
+           <!-- <button class="flex items-center px-3 py-2 border rounded text-black border-black hover:text-black hover:border-black">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button> -->
+         </div>
+        </div>
+
+        <nav class="align-text-bottom pt-4 pb-0 sm:flex sm:p-0 ">
+          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-base lg:flex-grow">
+              <!-- <div class="text-base "> -->
+              <a href="/introduce" class="{{ if eq .Section "introduce" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>소개</span></a>
+              <a href="/program" class="{{ if eq .Section "program" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>프로그램</span></a>
+              <a href="/webzine" class="{{ if eq .Section "webzine" }} line-through {{ end }} font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>웹진</span></a>
+              <!-- </div> -->
+            </div>
+          </div>
+        </nav>
+
+    </header>

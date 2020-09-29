@@ -1,0 +1,79 @@
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/earlyaccess/jejumyeongjo.css' rel='stylesheet' type='text/css'>
+
+    <style>
+     * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+
+     .font-jejumyeongjo {
+       font-family: 'Jeju Myeongjo', serif;
+     }
+
+     .font-jejumyeongjo p {
+       font-family: 'Jeju Myeongjo', serif;
+       font-size: 1.25rem;
+     }
+
+     .font-spoqa {
+       font-family: 'Spoqa Han Sand', sans-serif;;
+     }
+
+     span {
+       position: relative;
+       cursor: pointer;
+     }
+
+     a span:before, a span:after {
+       content: '';
+       position: absolute;
+       width: 0%;
+       height: 1px;
+       top: 50%;
+       margin-top: -0.5px;
+       background: #000;
+     }
+
+     a span:before {
+       left: -2.5px;
+     }
+     a span:after {
+       right: 2.5px;
+       background:  #000;;
+       transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+     }
+
+     a span:hover:before {
+       background:  #000;;
+       width: 100%;
+       transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+     }
+
+     a span:hover:after {
+       background: transparent;
+       width: 100%;
+       transition: 0s;
+     }
+
+     .footnotes ol {
+       list-style-type: decimal;
+       padding-inline-start: 20px;
+     }
+
+     .lg-program table tr td {
+       word-break: keep-all;
+     }
+
+    </style>
+    <!-- opengraph -->
+
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+
+  </head>

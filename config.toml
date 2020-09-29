@@ -1,0 +1,8 @@
+baseURL = "http://0makes0.com/"
+languageCode = "en-us"
+title = "Zero Makes Zero"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

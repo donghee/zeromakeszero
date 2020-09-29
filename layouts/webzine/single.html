@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+    <div class="flex">
+      <div class="h-2 m-auto text-base mt-4 mb-20">
+        <a class="m-3" href="/webzine"><span>vol.0</span></a>
+        <!-- <a class="m-3" href="#schedule"><span>vol.2</span></a>
+             <a class="m-3" href="#design"><span>vol.3</span></a>
+             <a class="m-3" href="#people"><span>vol.4</span></a>
+             <a class="m-3" href="#"><span>vol.5</span></a>
+             <a class="m-3" href="#schedule"><span>vol.6</span></a>
+             <a class="m-3" href="#design"><span>vol.7</span></a>
+             <a class="m-3" href="#people"><span>vol.8</span></a>
+             <a class="m-3" href="#schedule"><span>vol.9</span></a>
+             <a class="m-3" href="#design"><span>vol.10</span></a>
+             <a class="m-3" href="#people"><span>vol.11</span></a> -->
+      </div>
+    </div>
+
+    <div class="webzine-article max-w-screen-xl m-auto text-2xl border-black border-2 p-6 my-8">
+      <div class="text-base mb-5">
+        <span>vol.0</span>
+      </div>
+
+      <h1 class="font-semibold">
+        {{ with .Title }}{{ . | safeHTML }}{{ end }}
+      </h1>
+
+      <!-- <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">태그</span>  <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">태그2</span> -->
+
+      <!-- <img class="lg:w-1/2 p-4 m-auto" src="{{ .Params.banner }}"> -->
+
+      <div class="m-2 text-xl leading-10">
+        {{ .Content }}
+      </div>
+
+    </div>
+
+<div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
+  <div class="flex-1">
+    {{with .PrevInSection}}
+    <a href="{{.Permalink}}">
+      <img src="https://imgur.com/FqfR7v4.png">
+    </a>
+    {{end}}
+      </div>
+      <div class="flex-1 text-left">
+        {{with .PrevInSection}}
+        <span class="font-semibold">이전 기사</span>
+        {{end}}
+        <br/> {{with .PrevInSection}}{{.Title}}{{end}}
+      </div>
+      <div class="flex-auto">
+      </div>
+      <div class="w-1/12 flex-auto">
+        {{with .NextInSection}}
+        <span class="font-semibold">다음 기사</span>
+        {{end}}
+        <br/> {{with .NextInSection}}{{.Title}}{{end}}
+      </div>
+      <div class="flex-none">
+        {{with .NextInSection}}
+        <a href="{{.Permalink}}">
+          <img src="https://i.imgur.com/MikIQWD.png">
+        </a>
+        {{end}}
+      </div>
+</div>
+
+
+{{ end }}
