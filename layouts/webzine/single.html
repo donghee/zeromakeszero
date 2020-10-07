@@ -16,12 +16,12 @@
       </div>
     </div>
 
-    <div class="webzine-article max-w-screen-xl m-auto text-2xl border-black border-2 p-6 my-8">
+    <div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-6 my-8">
       <div class="text-base mb-5">
         <span>vol.0</span>
       </div>
 
-      <h1 class="font-semibold">
+      <h1 class="font-semibold text-xl mb-8">
         {{ with .Title }}{{ . | safeHTML }}{{ end }}
       </h1>
 
@@ -29,11 +29,14 @@
 
       <!-- <img class="lg:w-1/2 p-4 m-auto" src="{{ .Params.banner }}"> -->
 
-      <div class="m-2 text-xl leading-10">
+      <div class="m-2 text-lg leading-10">
         {{ .Content }}
       </div>
 
+      {{ partial "share.html" . }}
+
     </div>
+
 
 <div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
   <div class="flex-1">
@@ -65,6 +68,5 @@
         {{end}}
       </div>
 </div>
-
 
 {{ end }}

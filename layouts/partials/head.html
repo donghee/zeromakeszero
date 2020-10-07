@@ -12,8 +12,13 @@
   <link rel="stylesheet" href="/css/tailwind.css">
   <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/earlyaccess/jejumyeongjo.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
   <style>
+   .font-hanja {
+     font-family: Dotum,AppleGothic,Arial Unicode MS, sans-serif;
+   }
+
    .font-jejumyeongjo p {
      font-family: 'Jeju Myeongjo', serif;
      font-size: 1.25rem;
@@ -62,6 +67,31 @@
 
    .lg-program table tr td {
      word-break: keep-all;
+   }
+
+   /* article sns share */
+
+   .article-share {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     margin-bottom: 40px;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-align-items: flex-end;
+     align-items: flex-end;
+     -webkit-flex-wrap: wrap;
+     flex-wrap: wrap;
+   }
+   .article-share li {
+     margin-right: 4px;
+     vertical-align: bottom;
+     padding: 0;
+     font-size: 0.8em;
+   }
+
+   .article-share li a:hover, .article-share li a:active {
+     color: #fff;
    }
 
   </style>

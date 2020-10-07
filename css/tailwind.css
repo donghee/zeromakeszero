@@ -1,20 +1,31 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
 
 @layer base {
   body {
     @apply font-spoqa;
+
   }
 
   .program-list p {
-    /* @apply font-light; */
     @apply py-5;
   }
 
   .program-flyer p {
-    /* @apply font-light; */
     @apply py-5;
+    @apply text-xl;
+  }
+
+
+  .webzine-article h1 {
+    @apply font-extrabold;
+    @apply text-xl;
+    @apply mb-8;
+  }
+
+  .webzine-article h2 {
+    @apply font-normal;
     @apply text-lg;
   }
 
@@ -22,6 +33,7 @@
     @apply font-jejumyeongjo;
     @apply font-light;
     @apply py-5;
+    @apply text-xl;
   }
 
   .footnotes {
@@ -31,6 +43,7 @@
   .footnotes ol li p {
     @apply font-spoqa;
     @apply leading-8;
+    @apply text-lg;
   }
 
   .footnotes ol li a::after {
@@ -38,3 +51,5 @@
     white-space: pre;
   }
 }
+
+@tailwind utilities;
