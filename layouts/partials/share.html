@@ -1,0 +1,65 @@
+{{ if eq .Params.share true}}
+<div class="flex justify-end">
+  <ul class="article-share">
+    <li>
+      <a class="btn btn-sm btn-social btn-fb" href="{{ .Permalink | absURL | printf "https://facebook.com/sharer/sharer.php?u=%s" | safeURL }}" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-square"></i> <span class="text-sm">공유</span>
+      </a>
+    </li>
+    <li>
+      <!-- Sharingbutton Twitter -->
+      <a class="btn btn-sm btn-social btn-tw" href="{{ printf "https://twitter.com/intent/tweet/?text=%s - %s&url=%s" (.Title | safeURL) (.Site.Title | safeURL) (.Permalink | absURL) | safeURL }}" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i> <span class="text-sm">Tweet</span>
+      </a>
+    </li>
+    <li>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+      <a id="kakao-link-btn" href="javascript:sendLink()">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png" width="24" height="24"/>
+      </a>
+      <script type='text/javascript'>
+       Kakao.init('my-app-key');
+       function sendLink() {
+         Kakao.Link.createDefaultButton({
+           container: '#kakao-link-btn',
+           objectType: 'feed',
+           content: {
+             title: {{ .Title }},
+             description: {{ .Summary }},
+             imageUrl: '//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png',
+             link: {
+               mobileWebUrl: {{ .Permalink | absURL }},
+               webUrl: {{ .Permalink | absURL}}
+             }
+           }
+         });
+       }
+      </script>
+    </li>
+    <li>
+      <div id="kakaostory-share-button" data-href="{{ .Permalink | absURL }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+      <script>
+       window.kakaoAsyncInit = function () {
+         Kakao.Story.createShareButton({
+           container: '#kakaostory-share-button'
+         });
+       };
+
+       (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "//developers.kakao.com/sdk/js/kakao.story.min.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'kakao-js-sdk'));
+      </script>
+    </li>
+    <li>
+      <script type="text/javascript" src="//developers.band.us/js/share/band-button.js?v=27062018"></script>
+      <script type="text/javascript">
+       new ShareBand.makeButton({"lang":"ko","type":"f"});
+      </script>
+    </li>
+  </ul>
+</div>
+{{ end }}
