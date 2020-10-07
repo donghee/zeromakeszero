@@ -1,6 +1,7 @@
 baseURL = "http://0makes0.com/"
 languageCode = "en-us"
 title = "Zero Makes Zero"
+summaryLength = "10"
 
 [markup]
   [markup.goldmark]
