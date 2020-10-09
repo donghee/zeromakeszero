@@ -2,6 +2,7 @@ baseURL = "http://0makes0.com/"
 languageCode = "en-us"
 title = "Zero Makes Zero"
 summaryLength = "10"
+googleAnalytics = "UA-180203838-1"
 
 [markup]
   [markup.goldmark]
