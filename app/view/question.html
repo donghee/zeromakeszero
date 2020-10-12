@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicons/site.webmanifest">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/earlyaccess/jejumyeongjo.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <style>
+   .font-hanja {
+     font-family: Dotum,AppleGothic,Arial Unicode MS, sans-serif;
+   }
+
+   .font-jejumyeongjo p {
+     font-family: 'Jeju Myeongjo', serif;
+     font-size: 1.25rem;
+   }
+
+   span {
+     position: relative;
+     cursor: pointer;
+   }
+
+   a span:before, a span:after {
+     content: '';
+     position: absolute;
+     width: 0%;
+     height: 1px;
+     top: 50%;
+     margin-top: -0.5px;
+     background: #000;
+   }
+
+   a span:before {
+     left: -2.5px;
+   }
+   a span:after {
+     right: 2.5px;
+     background:  #000;;
+     transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+   }
+
+   a span:hover:before {
+     background:  #000;;
+     width: 100%;
+     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+   }
+
+   a span:hover:after {
+     background: transparent;
+     width: 100%;
+     transition: 0s;
+   }
+
+   .footnotes ol {
+     list-style-type: decimal;
+     padding-inline-start: 20px;
+   }
+
+   .lg-program table tr td {
+     word-break: keep-all;
+   }
+
+
+
+   .article-share {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     margin-bottom: 40px;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-align-items: flex-end;
+     align-items: flex-end;
+     -webkit-flex-wrap: wrap;
+     flex-wrap: wrap;
+   }
+   .article-share li {
+     margin-right: 4px;
+     vertical-align: bottom;
+     padding: 0;
+     font-size: 0.8em;
+   }
+
+   .article-share li a:hover, .article-share li a:active {
+     color: #fff;
+   }
+
+  </style>
+
+
+
+
+  <title>Zero Makes Zero | </title>
+
+</head>
+<body>      <header class="lg:flex xl:max-w-screen-xl m-auto items-end justify-between p-6">
+        <div class="hidden lg:flex lg:flex-row">
+          <a class="p-1" href="https://www.instagram.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/instagram.svg">
+          </a>
+          <a class="p-1" href="https://www.facebook.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/facebook.svg">
+          </a>
+          <a class="p-1" href="https://twitter.com/zeromakeszero" target="_blank">
+            <img class="h-8" src="/images/twitter.svg" alt="twitter">
+          </a>
+          <a class="p-1" href="http://pf.kakao.com/_vPxadK" target="_blank">
+            <img class="h-8" src="/images/kakaotalk.svg" alt="Kakaotalk" >
+          </a>
+          <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>
+        </div>
+        <div class="flex flex-row justify-between">
+          <div>
+            <a href="/">
+
+              <img class="h-10 md:h-10" src="/images/zeromakeszero-logo.svg" alt="Zero Makes Zero">
+            </a>
+          </div>
+
+         <div class="block lg:hidden">
+
+         </div>
+        </div>
+
+        <nav class="align-text-bottom pt-4 pb-0 sm:flex sm:p-0 ">
+          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-base lg:flex-grow">
+
+              <a href="/introduce" class=" pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>소개</span></a>
+              <a href="/program" class=" pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>프로그램</span></a>
+              <a href="/webzine" class=" line-through  font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>웹진</span></a>
+
+            </div>
+          </div>
+        </nav>
+
+    </header>
+<div id="content" class="border-t-2 border-b-2 border-black">
+
+    <div class="flex">
+      <div class="h-2 m-auto text-base mt-4 mb-20">
+        <a class="m-3" href="/webzine"><span>vol.0</span></a>
+
+      </div>
+    </div>
+
+    <div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-6 my-8">
+      <div class="text-base mb-5">
+        <span>vol.0</span>
+      </div>
+
+      <h1 class="font-semibold text-xl mb-8">
+        How to make it zero?
+      </h1>
+
+      <div class="m-2 text-lg leading-10">
+
+        <p>
+          <form id="form" action="" method="post">
+            <input class="w-full" type="text" value="<%= question %>" name="q">
+            <br/>
+            <input class="h-12 w-full border-black border-2 p-4 m-4" type="text" placeholder="답변을 적고, 전송 버튼을 눌러주세요." value="" name="a" >
+            <br/>
+            <input class="h-12 w-1/5 m-4 border-black border-2 bg-black text-white" type="submit" value="전송" name="submit">
+            <br/>
+          </form>
+        </p>
+      </div>
+
+      <p>
+      <!--
+      <a href="/webzine/vol1-3/answers">/<a>
+      -->
+      </p>
+
+    </div>
+
+
+<div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
+  <div class="flex-1">
+
+    <a href="http://0makes0.com/webzine/vol1-2/">
+      <img src="https://imgur.com/FqfR7v4.png">
+    </a>
+
+      </div>
+      <div class="flex-1 text-left">
+
+        <span class="font-semibold">이전 기사</span>
+
+        <br/> 어라우드랩(aloud_lab)에게 듣는 디자인 아이덴티티
+      </div>
+      <div class="flex-auto">
+      </div>
+      <div class="w-1/12 flex-auto">
+
+        <br/>
+      </div>
+      <div class="flex-none">
+
+      </div>
+</div>
+
+
+      </div><footer class="lg:flex xl:max-w-screen-xl m-4 lg:m-auto justify-between font-light text-sm pt-12 p-4">
+
+
+
+  <div class="flex flex-row lg:hidden mb-8 ">
+    <a class="p-1" href="https://www.instagram.com/zeromakeszero" target="_blank">
+      <img class="h-8" src="/images/instagram.svg">
+    </a>
+    <a class="p-1" href="https://www.facebook.com/zeromakeszero" target="_blank">
+      <img class="h-8" src="/images/facebook.svg">
+    </a>
+    <a class="p-1" href="https://twitter.com/zeromakeszero" target="_blank">
+      <img class="h-8" src="/images/twitter.svg" alt="twitter">
+    </a>
+    <a class="p-1" href="http://pf.kakao.com/_vPxadK" target="_blank">
+      <img class="h-8" src="/images/kakaotalk.svg" alt="Kakaotalk" >
+    </a>
+  </div>
+
+  <div class="">
+    <div class="flex flex-row justify-between mb-4">
+      <div class="" >
+        <h2 class="font-semibold text-base">제로의 예술 <br/> 소식지 구독</h2>
+      </div>
+      <div class="flex-1" >
+        <form action="https://0makes0.us17.list-manage.com/subscribe/post?u=ee7cadbcfc3c9d81ee97f98cc&amp;id=d4b906e697" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate onsubmit="return check_require_checkbox();">
+          <input class="h-12 w-3/5 border-black border-2 p-4 ml-4" type="text" placeholder="이메일 주소를 써주세요."  type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" >
+          <input class="h-12 w-1/5 p-1 border-black border-2 bg-black text-white" type="submit" value="Enter" name="subscribe"
+                 id="mc-embedded-subscribe" class="button" >
+        </form>
+      </div>
+    </div>
+    <span id="require-checkbox-message" class="hidden text-red-500"> 아래의 개인정보 처리 동의를 체크 해야 합니다. </span>
+    <input id="require-checkbox" class="" type="checkbox" /> 온라인 뉴스레터 수신을 위해 선택적 개인정보 처리(수집, 이용, 저장 등)에 동의한 것으로 간주합니다.
+    <div class="hidden lg:block">
+      <img class="mt-12 mb-2 lg:h-8" src="/images/arko.png">
+      <span class="">2020년 한국문화예술위원회 공공예술사업으로 진행됩니다.</span>
+    </div>
+  </div>
+
+  <div class="mt-8 lg:mt-0">
+    <h2 class="font-semibold text-base">제로의 예술</h2>
+    <h2 class="font-semibold text-base">zeromakeszero@gmail.com &nbsp; &nbsp;</h2>
+    <h2 class="font-semibold text-sm">010-4882-8200 (평일 11시-19시)</h2>
+    <p class="mt-2">
+    <a href="https://barimart.wordpress.com" target="_blank"><span>바림</span></a> (광주광역시 동구 대의동 80-2 3층) <br/>
+    <a href="http://womanopentechlab.kr" target="_blank"><span>여성을 위한 열린 기술랩</span></a> (서울시 중구 을지로 157 대림상가 세운메이커스큐브 대림-동측 306호)
+    </p>
+    <p class="mt-4"><a href="https://github.com/donghee/zeromakeszero" target="_blank"><span>웹개발 박동희 </span>(은파산업)</a></p>
+    <p class="mt-4">©2020 0makes0 All rights reserved</p>
+  </div>
+  <div class="lg:hidden mt-4">
+    <span class="inline mb-2">2020년 한국문화예술위원회 공공예술사업 </span> <img class="h-6 lg:h-8" src="/images/arko.png">
+  </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-180203838-1', 'auto');
+
+	ga('send', 'pageview');
+}
+</script>
+
+</footer>
+
+<script type='text/javascript'>
+ function check_require_checkbox() {
+   var require_checkbox = document.getElementById('require-checkbox');
+   var require_checkbox_message  = document.getElementById('require-checkbox-message');
+   require_checkbox_message.style.display = "none";
+   if(!require_checkbox.checked){
+     require_checkbox_message.style.display = "block";
+     return false;
+   }
+ }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#submit").on('click', function(){
+            $.ajax({
+                url: 'https://0makes0.com/webzine/vol1-3/', // url where to submit the request
+                type : "POST", 
+                dataType : 'json', // data type
+                data : $("#form").serialize(), // post data || get data
+                success : function(result) {
+                    // you can see the result from the console
+                    // tab of the developer tools
+                    console.log(result);
+                },
+                error: function(xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                }
+            })
+        });
+    });
+
+</script>
+
+</body>
+</html>
+
