@@ -9,7 +9,6 @@
     <!-- <div class="h-40 pt-20">
          <hr/>
          </div> -->
-    <!-- <div class="text-left ml-10 m-auto"> -->
     <div class="text-left ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
         <a href="/program/2">
@@ -18,18 +17,19 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 10 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
+      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주)</span>
     </div>
   </div>
 
   <div class="lg:w-1/5 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2 hover:bg-gray-100"  onclick="location.href='/program/1';">
-    <!-- <div class="h-40 pt-6 bg-contain bg-repeat-x" style="background-image: url(/images/wave_active_2.png)"> -->
-    <!-- <div class="h-40 pt-6">
+    <div class="h-40 pt-6">
          <canvas id="wave_program_1" width="600" height="80"></canvas>
-         </div> -->
+         </div> 
+         <!--
     <div class="h-40 pt-20">
       <hr/>
     </div>
+         -->
     <div class="text-left ml-10 m-auto">
         <div class="font-semibold mb-1">
           <a href="/program/1">
@@ -38,6 +38,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
+      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
       </div>
   </div>
 
@@ -66,8 +67,8 @@
 
 <div class="lg:flex lg:h-64">
   <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/4';">
-    <div class="h-32 pt-20">
-      <hr/>
+    <div class="h-40 pt-6">
+      <canvas id="wave_program_4" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
@@ -225,7 +226,7 @@
  function rainbow(value, s, l, max, min, start, end) {
    value = ((value - min) * (start - end) / max)+end;
    console.log(value);
-   return 'hsl(' + value + ','+s+'%,'+l+'%)';
+    return 'hsl(' + value + ','+s+'%,'+l+'%)';
  }
 
  function plotSawtooth(ctx, xOffset, yOffset) {
@@ -235,7 +236,7 @@
 
    ctx.beginPath();
    ctx.lineWidth = 4;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
    /* var start = 260;
     * var end = 360;
     * ctx.strokeStyle = rainbow(Math.abs(xOffset/10), 100, 50, Math.max(start,end), Math.min(start,end), start, end); */
@@ -250,6 +251,40 @@
    ctx.save();
  }
 
+ var π = Math.PI
+ var τ = 2 * Math.PI
+
+ function A(n) {
+   return (((n + 1) % 2) ? 0 : 1) / n;
+ }
+
+ function FT(A, N, φ) {
+   φ = φ || 0;
+   return function(x) {
+     var n = -1, y = 0;
+     /* console.log(A(n));
+      * console.log(τ);
+      * console.log(φ);
+      */
+     while (++n < N) {
+       y += A(n) * Math.sin(τ * (n + 1) * x + φ);
+     }
+     /* console.log(y); */
+     return y;
+   }
+ }
+
+ //  http://en.wikipedia.org/wiki/Square_wave
+ // https://mathworld.wolfram.com/FourierSeries.html
+ function approximationSquareY(t) {
+   var y = 0;
+   var f = 2; // frequency
+   for(var k = 1; k <= 10; k+=2) {
+     y += 4/(π*k) * Math.sin(2*π*k*f*t); // square wave
+     /* y += (8*(-1^((k-1)/2)))/(π^2*k^2) * Math.sin(2*π*k*f*t); // triangle wave wave */
+   }
+   return y * 40;
+ }
 
  function plotFourierSeries(ctx, xOffset, yOffset) {
    var width = ctx.canvas.width;
@@ -260,28 +295,24 @@
    ctx.lineWidth = 4;
    ctx.strokeStyle = "rgb(255,0,255)";
 
-   var x = 4;
+   var x = 0;
    var y = 0;
-   var amplitude = 40;
-   var frequency = 20;
-   //ctx.moveTo(x, y);
-   //ctx.moveTo(x, 50);
-   var f = 1;
+   /* ctx.moveTo(x, y); */
+
    while (x < width) {
-     for(var k = 1; k <= 10; k+=2) {
-       y += 4/(Math.PI*k) * Math.sin(2*Math.PI*k*f*t);
-     }
-     /* y = height/2 + amplitude * Math.sin((x+xOffset)/frequency); */
-     ctx.lineTo(x, y);
+     /* fx = FT(A, 6 - 1, π/2); */
      x++;
-     // console.log("x="+x+" y="+y);
+     /* y = (height/2.4)*Math.sin(3*(x+xOffset)); */
+     y = approximationSquareY((x+xOffset)/width);
+
+     ctx.lineTo(x, y + yOffset + 20);
    }
    ctx.stroke();
    ctx.save();
  }
 
  function drawRandom() {
-   var canvas = document.getElementById("wave_program_1");
+   var canvas = document.getElementById("wave_program_4");
    var context = canvas.getContext("2d");
 
    setTimeout(function() {
@@ -305,7 +336,7 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSine(context, step, 50);
+     plotSine(context, step/1.5, 50);
      context.restore();
 
      step += 4;
@@ -322,7 +353,7 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSawtooth(context, step, 50);
+     plotSawtooth(context, step/3, 50);
      context.restore();
 
      step += 1;
@@ -340,18 +371,22 @@
      context.save();
 
      plotFourierSeries(context, step, 50);
+     /* plotSine(context, step, 50); */
      context.restore();
 
-     step += 4;
+     /* step += 0.1; */
 
-     window.requestAnimationFrame(drawRandom);
+     window.requestAnimationFrame(drawFourierSeries);
    }, 1000 / 30);
  }
 
  function init() {
+   /*
+   window.requestAnimationFrame(drawRandom);
+   */
    window.requestAnimationFrame(drawSineWave);
-   /* window.requestAnimationFrame(drawRandom); */
    window.requestAnimationFrame(drawSawtooth);
+   window.requestAnimationFrame(drawFourierSeries);
  }
  var step = -4;
 
@@ -366,15 +401,17 @@
    _canvas.height = _canvas.offsetHeight;
  }
 
+ var program_4_canvas = document.getElementById('wave_program_4');
+ fitToContainer(program_4_canvas);
+
  var program_3_canvas = document.getElementById('wave_program_3');
  fitToContainer(program_3_canvas);
 
  var program_2_canvas = document.getElementById('wave_program_2');
  fitToContainer(program_2_canvas);
 
- /* var program_1_canvas = document.getElementById('wave_program_1');
-  * console.log(program_1_canvas.width);
-  * fitToContainer(program_1_canvas); */
+ var program_1_canvas = document.getElementById('wave_program_1');
+ fitToContainer(program_1_canvas);
 
 </script>
 {{ end }}
