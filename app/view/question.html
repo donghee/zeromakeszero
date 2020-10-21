@@ -160,30 +160,27 @@
         <span>vol.0</span>
       </div>
 
-      <h1 class="font-semibold text-xl mb-8">
+      <h1 class="font-semibold text-xl">
         How to make it zero?
       </h1>
 
-      <div class="m-2 text-lg leading-10">
+      <div class="text-lg leading-10 text-center">
+        <div class="w-4/5 text-4xl font-semibold font-jejumyeongjo m-auto mt-16 mb-16"><%= question %></div>
+        <a href="https://0makes0.com/webzine/vol1-3/">
+          <span class="text-xl font-semibold font-spoqa m-auto">
+            다른 질문 보기
+          </span>
+        </a>
 
-        <p>
+        <div class="text-center mt-16">
+          <h3 class="text-xl font-semibold font-spoqa m-auto mb-2"> 당신의 생각은 어떤가요? 당신의 생각을 보내주세요.</h3>
           <form id="form" action="" method="post">
-            <input class="w-full" type="text" value="<%= question %>" name="q">
-            <br/>
-            <input class="h-12 w-full border-black border-2 p-4 m-4" type="text" placeholder="답변을 적고, 전송 버튼을 눌러주세요." value="" name="a" >
-            <br/>
-            <input class="h-12 w-1/5 m-4 border-black border-2 bg-black text-white" type="submit" value="전송" name="submit">
-            <br/>
+            <input type="hidden" value="<%= question %>" name="q">
+            <textarea class="w-full lg:w-11/12 h-40 border-black border-2 px-2 mx-1" type="text" placeholder="생각을 적고, 보내기 버튼을 눌러주세요." name="a" ></textarea>
+            <input class="mx-2 p-2 px-10 border-black border-2 bg-black text-white" type="submit" value="보내기" name="submit">
           </form>
-        </p>
+        </div>
       </div>
-
-      <p>
-      <!--
-      <a href="/webzine/vol1-3/answers">/<a>
-      -->
-      </p>
-
     </div>
 
 
@@ -193,12 +190,9 @@
     <a href="http://0makes0.com/webzine/vol1-2/">
       <img src="https://imgur.com/FqfR7v4.png">
     </a>
-
       </div>
       <div class="flex-1 text-left">
-
         <span class="font-semibold">이전 기사</span>
-
         <br/> 어라우드랩(aloud_lab)에게 듣는 디자인 아이덴티티
       </div>
       <div class="flex-auto">
@@ -300,13 +294,11 @@ if (!doNotTrack) {
     $(document).ready(function(){
         $("#submit").on('click', function(){
             $.ajax({
-                url: 'https://0makes0.com/webzine/vol1-3/', // url where to submit the request
+                url: 'https://0makes0.com/webzine/vol1-3/',
                 type : "POST", 
-                dataType : 'json', // data type
-                data : $("#form").serialize(), // post data || get data
+                dataType : 'json',
+                data : $("#form").serialize(),
                 success : function(result) {
-                    // you can see the result from the console
-                    // tab of the developer tools
                     console.log(result);
                 },
                 error: function(xhr, resp, text) {

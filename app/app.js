@@ -15,12 +15,12 @@ render(app, {
   layout:  false,
   viewExt: 'html',
   cache: false,
-  debug: true,
+  debug: false,
 });
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/zeromakeszero', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.on('error', console.error);
 
 const _answers = mongoose.model('answers', new mongoose.Schema({
@@ -57,47 +57,33 @@ const questions = [
     '감염병 시대에 적절한 거주방식은 어떤 형태일까?',
     '탄소 발생량을 줄이는 디자인이란 무엇일까?'];
 
-/*
-app.use(async ctx => {
-    var answer = await answers.find({});
-    const question = questions[Math.floor(Math.random()*questions.length)];
-//ctx.body = question;
-  await ctx.render('question', {
-    question
-  });
-});
-*/
-
-router.get('/', async (ctx, next) => {
+router.get('/', async (ctx) => {
   const question = questions[Math.floor(Math.random()*questions.length)];
   await ctx.render('question', {
     question
   });
 });
 
-router.post('/', async (ctx, next) => {
+router.post('/', async (ctx) => {
   const answer = ctx.request.body;
   console.log(answer);
   if (answer.a == '') {
      ctx.redirect('/');
   }
 
-  _answers.create({ q: answer.q, a: answer.a})
+  await _answers.create({ q: answer.q, a: answer.a}, function (err) {
+    if (err) return console.error(err);
+  });
 
   const question = questions[Math.floor(Math.random()*questions.length)];
   await ctx.render('question', {
     question
   });
-/*
-ctx.body = 'success'
-ctx.status = 201;
-await next();
-*/
 });
 
 
-router.get('/answers', async (ctx, next) => {
-    var answers = await _answers.find({});
+router.get('/answers', async (ctx) => {
+  var answers = await _answers.find({});
   await ctx.render('answers', {
     answers
   });
