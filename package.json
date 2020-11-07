@@ -2,9 +2,11 @@
   "name": "zeromakeszero",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://u.0makes0.com",
   "scripts": {
     "tailwind": "postcss css/tailwind.css -o static/css/tailwind.css",
-    "hugo": "hugo"
+    "hugo": "hugo",
+    "shorten": "netlify-shortener"
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",
@@ -17,7 +19,9 @@
     "postcss-cli": "^8.0.0",
     "tailwindcss": "^1.8.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-shortener": "^2.3.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
