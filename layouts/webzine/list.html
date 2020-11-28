@@ -2,9 +2,9 @@
 
     <div class="flex">
       <div class="h-2 m-auto text-base mt-4 mb-20">
-        <a class="m-3" href="/webzine"><span>vol.1</span></a>
-        <!-- <a class="m-3" href="#schedule"><span>vol.2</span></a>
-             <a class="m-3" href="#design"><span>vol.3</span></a>
+        <a class="m-3" href="/webzine/vol1"><span>vol.1</span></a>
+        <a class="m-3" href="/webzine/vol2"><span>vol.2</span></a>
+        <!-- <a class="m-3" href="#design"><span>vol.3</span></a>
              <a class="m-3" href="#people"><span>vol.4</span></a>
              <a class="m-3" href="#"><span>vol.5</span></a>
              <a class="m-3" href="#schedule"><span>vol.6</span></a>
@@ -19,7 +19,7 @@
     <div class="max-w-screen-xl m-auto text-xl leading-10 mb-8">
       <a href="vol1-1">
         <div class="lg:flex justify-between">
-          {{ range .Data.Pages.ByDate }}
+          {{ range .RegularPages.ByDate }}
           <div class="lg:w-1/3 text-xl border-black border-2 p-4 m-2">
             <!-- <div class="text-xl border-black border-2 p-4 m-2"> -->
             <a href="{{.Permalink}}">

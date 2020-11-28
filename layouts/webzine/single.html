@@ -2,9 +2,9 @@
 
     <div class="flex">
       <div class="h-2 m-auto text-base mt-4 mb-20">
-        <a class="m-3" href="/webzine"><span>vol.1</span></a>
-        <!-- <a class="m-3" href="#schedule"><span>vol.2</span></a>
-             <a class="m-3" href="#design"><span>vol.3</span></a>
+        <a class="m-3" href="/webzine/vol1"><span>vol.1</span></a>
+        <a class="m-3" href="/webzine/vol2"><span>vol.2</span></a>
+        <!-- <a class="m-3" href="#design"><span>vol.3</span></a>
              <a class="m-3" href="#people"><span>vol.4</span></a>
              <a class="m-3" href="#"><span>vol.5</span></a>
              <a class="m-3" href="#schedule"><span>vol.6</span></a>
@@ -18,7 +18,7 @@
 
     <div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-6 my-8">
       <div class="text-base mb-5">
-        <span>vol.1</span>
+        <span>{{ .Params.volume }}</span>
       </div>
 
       <h1 class="font-semibold text-xl mb-8">
