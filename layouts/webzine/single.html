@@ -1,22 +1,23 @@
 {{ define "main" }}
 
-    <div class="flex">
-      <div class="h-2 m-auto text-base mt-4 mb-20">
-        <a class="m-3" href="/webzine/vol1"><span>vol.1</span></a>
-        <a class="m-3" href="/webzine/vol2"><span>vol.2</span></a>
-        <!-- <a class="m-3" href="#design"><span>vol.3</span></a>
-             <a class="m-3" href="#people"><span>vol.4</span></a>
-             <a class="m-3" href="#"><span>vol.5</span></a>
-             <a class="m-3" href="#schedule"><span>vol.6</span></a>
-             <a class="m-3" href="#design"><span>vol.7</span></a>
-             <a class="m-3" href="#people"><span>vol.8</span></a>
-             <a class="m-3" href="#schedule"><span>vol.9</span></a>
-             <a class="m-3" href="#design"><span>vol.10</span></a>
-             <a class="m-3" href="#people"><span>vol.11</span></a> -->
-      </div>
-    </div>
+<div class="flex">
+  <div class="h-2 ml-4 lg:m-auto text-base mt-4 mb-20">
+    <a class="m-3" href="/webzine/vol1"><span>vol.1</span></a>
+    <a class="m-3" href="/webzine/vol2"><span>vol.2</span></a>
+    <!-- <a class="m-3" href="#design"><span>vol.3</span></a>
+         <a class="m-3" href="#people"><span>vol.4</span></a>
+         <a class="m-3" href="#"><span>vol.5</span></a>
+         <a class="m-3" href="#schedule"><span>vol.6</span></a>
+         <a class="m-3" href="#design"><span>vol.7</span></a>
+         <a class="m-3" href="#people"><span>vol.8</span></a>
+         <a class="m-3" href="#schedule"><span>vol.9</span></a>
+         <a class="m-3" href="#design"><span>vol.10</span></a>
+         <a class="m-3" href="#people"><span>vol.11</span></a> -->
+  </div>
+</div>
 
-    <div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-6 my-8">
+
+    <div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-4 mb-8">
       <div class="text-base mb-5">
         <span>{{ .Params.volume }}</span>
       </div>
@@ -29,7 +30,7 @@
 
       <!-- <img class="lg:w-1/2 p-4 m-auto" src="{{ .Params.banner }}"> -->
 
-      <div class="m-2 text-lg leading-10">
+      <div class="lg:m-8 text-lg leading-10">
         {{ .Content }}
       </div>
 
