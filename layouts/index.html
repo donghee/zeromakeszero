@@ -17,7 +17,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 10 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span> -->
     </div>
   </div>
 
@@ -38,7 +38,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span> -->
       </div>
   </div>
 
@@ -67,7 +67,7 @@
 
 <div class="lg:flex lg:h-64">
   <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/4';">
-    <div class="h-40 pt-6">
+    <div class="h-32 pt-6">
       <canvas id="wave_program_4" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 lg:ml-20 m-auto">
@@ -78,13 +78,13 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
 
   <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/6';">
-    <div class="h-32 pt-20">
-      <hr/>
+    <div class="h-32 pt-6">
+      <canvas id="wave_program_6" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
@@ -94,6 +94,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 1 - 3</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청중</span>
     </div>
   </div>
 
@@ -183,17 +184,16 @@
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 4;
    var y = 0;
-   var amplitude = 40;
+   var amplitude = 35;
    var frequency = 20;
-   //ctx.moveTo(x, y);
-   //ctx.moveTo(x, 50);
+
    while (x < width) {
      y = height/2 + amplitude * ((Math.random()-0.5) * 3.14)
-     ctx.lineTo(x, y);
+     ctx.lineTo(x, y + yOffset);
      /* x++; */
      x = x+8;
    }
@@ -207,8 +207,8 @@
    var scale = 20;
 
    ctx.beginPath();
-   ctx.lineWidth = 4;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.lineWidth = 2;
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 4;
    var y = 0;
@@ -216,9 +216,8 @@
    var frequency = 20;
    while (x < width) {
      y = height/2 + amplitude * Math.sin((x+xOffset)/frequency);
-     ctx.lineTo(x, y);
+     ctx.lineTo(x, y + yOffset);
      x++;
-     // console.log("x="+x+" y="+y);
    }
    ctx.stroke();
    ctx.save();
@@ -236,8 +235,8 @@
    var scale = 20;
 
    ctx.beginPath();
-   ctx.lineWidth = 4;
-   ctx.strokeStyle = "rgb(0,0,0)";
+   ctx.lineWidth = 2;
+   ctx.strokeStyle = "rgb(255,0,255)";
    /* var start = 260;
     * var end = 360;
     * ctx.strokeStyle = rainbow(Math.abs(xOffset/10), 100, 50, Math.max(start,end), Math.min(start,end), start, end); */
@@ -246,6 +245,27 @@
    while (x < width) {
      y = (x+xOffset) % 100;
      ctx.lineTo(x, y);
+     x++;
+   }
+   ctx.stroke();
+   ctx.save();
+ }
+
+ function plotSawtooth2(ctx, xOffset, yOffset) {
+   var width = ctx.canvas.width;
+   var height = ctx.canvas.height;
+
+   ctx.beginPath();
+   ctx.lineWidth = 2;
+   ctx.strokeStyle = "rgb(255,0,255)";
+
+   var x = 4;
+   var y = 0;
+   var t = 0;
+   while (x < width) {
+     t = 150 - ((x+xOffset) % 150 + 1)
+     y = t - parseInt(t/50)*25;
+     ctx.lineTo(x, y+yOffset);
      x++;
    }
    ctx.stroke();
@@ -293,8 +313,8 @@
    var scale = 20;
 
    ctx.beginPath();
-   ctx.lineWidth = 4;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.lineWidth = 2;
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 0;
    var y = 0;
@@ -320,7 +340,7 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotRandom(context, step, 50);
+     plotRandom(context, step, 0);
      context.restore();
 
      window.requestAnimationFrame(drawRandom);
@@ -335,7 +355,7 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSine(context, step/1.5, 50);
+     plotSine(context, step/1.5, 0);
      context.restore();
 
      step += 4;
@@ -352,12 +372,27 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSawtooth(context, step/3, 50);
+     plotSawtooth(context, step/3, 0);
      context.restore();
 
      step += 1;
 
      window.requestAnimationFrame(drawSawtooth);
+   }, 1000 / 30);
+ }
+
+ function drawSawtooth2() {
+   var canvas = document.getElementById("wave_program_6");
+   var context = canvas.getContext("2d");
+
+   setTimeout(function() {
+     context.clearRect(0, 0, canvas.width, canvas.height);
+     context.save();
+
+     plotSawtooth2(context, step, 0);
+     context.restore();
+
+     window.requestAnimationFrame(drawSawtooth2);
    }, 1000 / 30);
  }
 
@@ -383,6 +418,7 @@
    window.requestAnimationFrame(drawRandom);
    window.requestAnimationFrame(drawSineWave);
    window.requestAnimationFrame(drawSawtooth);
+   window.requestAnimationFrame(drawSawtooth2);
    window.requestAnimationFrame(drawFourierSeries);
  }
  var step = -4;
@@ -397,6 +433,9 @@
    _canvas.width  = _canvas.offsetWidth;
    _canvas.height = _canvas.offsetHeight;
  }
+
+ var program_6_canvas = document.getElementById('wave_program_6');
+ fitToContainer(program_6_canvas);
 
  var program_4_canvas = document.getElementById('wave_program_4');
  fitToContainer(program_4_canvas);
