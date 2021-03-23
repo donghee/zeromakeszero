@@ -9,15 +9,16 @@
     "shorten": "netlify-shortener"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.1.0",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-ejs": "^4.3.0",
     "koa-router": "^9.4.0",
     "live-server": "^1.2.1",
     "mongoose": "^5.10.9",
-    "postcss-cli": "^8.0.0",
-    "tailwindcss": "^1.8.10"
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.4"
   },
   "devDependencies": {
     "netlify-shortener": "^2.3.0"

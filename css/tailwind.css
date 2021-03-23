@@ -10,13 +10,22 @@
 
   .program-list p {
     @apply py-5;
+    @apply leading-10;
   }
 
   .program-flyer p {
     @apply py-5;
     @apply text-xl;
+    @apply leading-10;
   }
 
+  .webzine-list h2 {
+    @apply leading-10;
+  }
+
+  .webzine-list p {
+    @apply leading-10;
+  }
 
   .webzine-article h1 {
     @apply font-extrabold;
@@ -27,6 +36,7 @@
   .webzine-article h2 {
     @apply font-normal;
     @apply text-lg;
+    @apply leading-10;
   }
 
   .webzine-article p {
@@ -34,6 +44,19 @@
     @apply font-light;
     @apply py-5;
     @apply text-xl;
+    @apply leading-10;
+  }
+
+  .webzine-article em {
+    @apply font-jejumyeongjo;
+    @apply font-light;
+    @apply py-5;
+    @apply text-lg;
+    @apply leading-10;
+  }
+
+  .webzine-article em > a, .webzine-article p > a {
+      @apply underline;
   }
 
   .footnotes {
