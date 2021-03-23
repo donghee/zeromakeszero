@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+<div class="flex">
+  <div class="h-2 mx-auto mt-4 mb-20">
+    <a href="/archive/"> <span>아카이브</span></a>
+  </div>
+</div>
+
+<div class="webzine-article max-w-screen-xl m-auto border-black border-2 p-4 mb-8">
+  <div class="text-base mb-5">
+    <span></span>
+  </div>
+
+  <h1 class="font-semibold text-xl mb-8">
+    {{ with .Title }}{{ . | safeHTML }}{{ end }} 
+  </h1>
+
+  <div class="lg:m-8 text-lg leading-10">
+   <br/>
+    {{ .Content }}
+    <br/>
+    <ul>
+      <li>
+        <a href="{{ .Params.program_link }}"> <span>프로그램 설명 https://0makes0.com{{ .Params.program_link }}</span> </a>
+        <br/>
+
+        {{if .Params.webzine_link }}
+        <a href="{{ .Params.webzine_link }}"> <span> 웹진 읽기 https://0makes0.com/{{ .Params.webzine_link }}</span> </a>
+        <br/>
+        {{ end }}
+        {{if .Params.webzine_link_2 }}
+        <a href="{{ .Params.webzine_link_2 }}"> <span class="lg:ml-16 lg:pl-3"> https://0makes0.com/{{ .Params.webzine_link_2 }}</span> </a>
+        <br/>
+        {{ end }}
+      </li>
+      <ul>
+  </div>
+
+  <div class="lg:m-8 text-lg leading-10">
+    {{if .Params.photo_by }}
+    사진: {{ .Params.photo_by }}
+    {{ end }}
+    <br/>
+    영상: {{ .Params.video_by }}
+  </div>
+  <br/>
+
+  {{ partial "share.html" . }}
+
+</div>
+
+<div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
+  <div class="flex-1">
+    {{with .PrevInSection}}
+    <a href="{{.Permalink}}">
+      <img src="https://imgur.com/FqfR7v4.png">
+    </a>
+    {{end}}
+  </div>
+  <div class="flex-1 text-left">
+    {{with .PrevInSection}}
+    <span class="font-semibold">이전 </span>
+    {{end}}
+    <br/> {{with .PrevInSection}}{{.Title}}{{end}}
+  </div>
+  <div class="flex-auto">
+  </div>
+  <div class="w-1/12 flex-auto">
+    {{with .NextInSection}}
+    <span class="font-semibold">다음 </span>
+    {{end}}
+    <br/> {{with .NextInSection}}{{.Title}}{{end}}
+  </div>
+  <div class="flex-none">
+    {{with .NextInSection}}
+    <a href="{{.Permalink}}">
+      <img src="https://i.imgur.com/MikIQWD.png">
+    </a>
+    {{end}}
+  </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<div class="flex">
+  <div class="h-2 mx-auto mt-4 mb-20">
+    <a href="/archive/"> <span>아카이브</span></a>
+  </div>
+</div>
+
+<div class="webzine-list max-w-screen-xl m-auto text-xl mb-8">
+  <div class="lg:flex">
+    {{ range .RegularPages.ByDate }}
+    <div class="lg:w-1/4 text-xl border-black border-2 p-4 m-2">
+      <a href="{{.Permalink}}">
+        <img class="p-4" src="{{ .Params.banner }}">
+        <h2 class="font-semibold m-4">{{.Title}} 아카이브</h2>
+      </a>
+
+      <a href="{{.Permalink}}">
+        <h4 class="m-4">사진/영상 보기</h4>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+
+{{ end }}
