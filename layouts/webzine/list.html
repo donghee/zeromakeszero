@@ -1,33 +1,33 @@
 {{ define "main" }}
 
-    <div class="flex">
-      <div class="h-2 mx-auto mt-4 mb-20">
-        <a class="mr-2" href="/webzine/vol1"><span>vol.1</span></a>
-        <a class="mr-2" href="/webzine/vol2"><span>vol.2</span></a>
-      </div>
+<div class="flex">
+  <div class="h-2 mx-auto mt-4 mb-20">
+    <a class="mr-2" href="/webzine/vol1"><span>vol.1</span></a>
+    <a class="mr-2" href="/webzine/vol2"><span>vol.2</span></a>
+    <a class="mr-2" href="/webzine/vol3"><span>vol.3</span></a>
+  </div>
+</div>
+
+<div class="webzine-list max-w-screen-xl m-auto text-xl mb-8">
+  <div class="lg:flex justify-between">
+    {{ range .RegularPages.ByDate }}
+    <div class="lg:w-1/3 text-xl border-black border-2 p-4 m-2">
+      <!-- <div class="text-xl border-black border-2 p-4 m-2"> -->
+      <a href="{{.Permalink}}">
+        <img class="p-4" src="{{ .Params.banner }}">
+        <h2 class="font-semibold m-4">{{.Title}}</h2>
+      </a>
+
+      <p class="m-4">
+        {{ .Summary }}
+      </p>
+
+      <a href="{{.Permalink}}">
+        <h4 class="m-4 font-semibold">더보기</h4>
+      </a>
     </div>
-
-    <div class="max-w-screen-xl m-auto text-xl leading-10 mb-8">
-        <div class="lg:flex justify-between">
-          {{ range .RegularPages.ByDate }}
-          <div class="lg:w-1/3 text-xl border-black border-2 p-4 m-2">
-            <!-- <div class="text-xl border-black border-2 p-4 m-2"> -->
-            <a href="{{.Permalink}}">
-              <img class="p-4" src="{{ .Params.banner }}">
-              <h2 class="font-semibold m-4">{{.Title}}</h2>
-            </a>
-
-            <p class="m-4">
-              {{ .Summary }}
-
-            </p>
-
-            <a href="{{.Permalink}}">
-              <h4 class="m-4 font-semibold">더보기</h4>
-            </a>
-          </div>
-          {{ end }}
-        </div>
-    </div>
+    {{ end }}
+  </div>
+</div>
 
 {{ end }}
