@@ -15,7 +15,6 @@
 
   .program-flyer p {
     @apply py-5;
-    @apply text-xl;
     @apply leading-10;
   }
 

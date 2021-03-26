@@ -564,8 +564,7 @@ body {
 .program-flyer p {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  /* @apply text-xl; */
   line-height: 2.5rem;
 }
 
