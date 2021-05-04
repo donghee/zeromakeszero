@@ -31,13 +31,11 @@
 </div>
 
 <div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
-  <div class="flex-1">
+  <div class="flex-1 flex justify-center">
     {{with .PrevInSection}}
-    <center>
     <a href="{{.Permalink}}">
       <img src="https://imgur.com/FqfR7v4.png">
     </a>
-    </center>
     {{end}}
   </div>
   <div class="flex-1 text-left m-2">
@@ -51,7 +49,6 @@
   </div>
   <div class="hidden lg:block flex-auto">
   </div>
-  <!-- <div class="w-1/12 flex-auto"> -->
   <div class="flex-1 text-right m-2">
     {{with .NextInSection}}
     <span class="font-semibold">다음 기사</span>
@@ -61,14 +58,11 @@
       {{with .NextInSection}}{{.Title}}{{end}}
     </span>
   </div>
-  <!-- <div class="flex-none"> -->
-  <div class="flex-1">
+  <div class="flex-1 flex justify-center">
     {{with .NextInSection}}
-    <center>
     <a class="" href="{{.Permalink}}">
       <img src="https://i.imgur.com/MikIQWD.png">
     </a>
-    </center>
     {{end}}
   </div>
 </div>
