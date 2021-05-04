@@ -564,7 +564,6 @@ body {
 .program-flyer p {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  /* @apply text-xl; */
   line-height: 2.5rem;
 }
 
@@ -580,7 +579,7 @@ body {
   font-weight: 800;
   font-size: 1.25rem;
   line-height: 1.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .webzine-article h2 {

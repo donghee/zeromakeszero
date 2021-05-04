@@ -29,7 +29,7 @@
   .webzine-article h1 {
     @apply font-extrabold;
     @apply text-xl;
-    @apply mb-8;
+    @apply mb-4;
   }
 
   .webzine-article h2 {
