@@ -59,7 +59,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 10 - 2021. 3</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">서울</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
 </div>
 
@@ -110,7 +110,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 2 - 3</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">온라인</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
 
@@ -126,19 +126,15 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 4</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
     </div>
   </div>
 </div>
 
 <div class="lg:flex lg:h-64">
   <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='/program/8';">
-    <div class="h-32 pt-20">
-      <hr/>
+    <div class="h-32 pt-6">
+      <canvas id="wave_program_8" width="400" height="80"></canvas>
     </div>
-    <!-- <div class="h-32 pt-6">
-         <canvas id="wave_program_8" width="400" height="80"></canvas>
-         </div> -->
     <div class="text-left mt-8 ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
         <a href="/program/8">
@@ -146,7 +142,8 @@
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">온라인</span>
+      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
     </div>
   </div>
 
@@ -164,7 +161,7 @@
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
     </div>
   </div>
 
@@ -215,7 +212,7 @@
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 0;
    var y = 0;
@@ -270,7 +267,7 @@
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 4;
    var y = 0;
@@ -299,7 +296,7 @@
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
    /* var start = 260;
     * var end = 360;
     * ctx.strokeStyle = rainbow(Math.abs(xOffset/10), 100, 50, Math.max(start,end), Math.min(start,end), start, end); */
@@ -345,9 +342,11 @@
    ctx.strokeStyle = "rgb(255,0,255)";
    var x = 4;
    var y = 0;
+   var step = 48; // step width
+   var period = step * 3; // 
    while (x < width) {
-     y = 100 - ((x+xOffset) % 100 + 1);
-     ctx.lineTo(x, 45 * parseInt(y/34) + yOffset);
+     y = period - ((x+xOffset) % period + 1);
+     ctx.lineTo(x, step * parseInt(y/step) + yOffset);
      x++;
    }
    ctx.stroke();
@@ -568,7 +567,7 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotStepWave(context, step*0.5, 0);
+     plotStepWave(context, step*0.5, 1);
      context.restore();
 
  /*    step += 1; */
@@ -584,8 +583,8 @@
    window.requestAnimationFrame(drawSawtooth2);
    window.requestAnimationFrame(drawFourierSeries);
    window.requestAnimationFrame(drawSineWave2); // 5
-   /* window.requestAnimationFrame(drawStepWave); // 8
-    * window.requestAnimationFrame(drawSquareWave); // 9 */
+   window.requestAnimationFrame(drawStepWave); // 8
+   /* window.requestAnimationFrame(drawSquareWave); // 9 */
    window.requestAnimationFrame(drawSequence); // 7
  }
  var step = -1;
@@ -603,10 +602,10 @@
 
 
  /* var program_9_canvas = document.getElementById('wave_program_9');
-  * fitToContainer(program_9_canvas);
+  * fitToContainer(program_9_canvas); */
 
-  * var program_8_canvas = document.getElementById('wave_program_8');
-  * fitToContainer(program_8_canvas); */
+ var program_8_canvas = document.getElementById('wave_program_8');
+ fitToContainer(program_8_canvas);
 
  var program_7_canvas = document.getElementById('wave_program_7');
  fitToContainer(program_7_canvas);
