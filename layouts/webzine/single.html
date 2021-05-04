@@ -5,6 +5,7 @@
     <a class="mr-2" href="/webzine/vol1"><span>vol.1</span></a>
     <a class="mr-2" href="/webzine/vol2"><span>vol.2</span></a>
     <a class="mr-2" href="/webzine/vol3"><span>vol.3</span></a>
+    <a class="mr-2" href="/webzine/vol4"><span>vol.4</span></a>
   </div>
 </div>
 
@@ -32,30 +33,42 @@
 <div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
   <div class="flex-1">
     {{with .PrevInSection}}
+    <center>
     <a href="{{.Permalink}}">
       <img src="https://imgur.com/FqfR7v4.png">
     </a>
+    </center>
     {{end}}
   </div>
-  <div class="flex-1 text-left">
+  <div class="flex-1 text-left m-2">
     {{with .PrevInSection}}
     <span class="font-semibold">이전 기사</span>
     {{end}}
-    <br/> {{with .PrevInSection}}{{.Title}}{{end}}
+    <br/>
+    <span class="hidden lg:block">
+      {{with .PrevInSection}}{{.Title}}{{end}}
+    </span>
   </div>
-  <div class="flex-auto">
+  <div class="hidden lg:block flex-auto">
   </div>
-  <div class="w-1/12 flex-auto">
+  <!-- <div class="w-1/12 flex-auto"> -->
+  <div class="flex-1 text-right m-2">
     {{with .NextInSection}}
     <span class="font-semibold">다음 기사</span>
     {{end}}
-    <br/> {{with .NextInSection}}{{.Title}}{{end}}
+    <br/>
+    <span class="hidden lg:block">
+      {{with .NextInSection}}{{.Title}}{{end}}
+    </span>
   </div>
-  <div class="flex-none">
+  <!-- <div class="flex-none"> -->
+  <div class="flex-1">
     {{with .NextInSection}}
-    <a href="{{.Permalink}}">
+    <center>
+    <a class="" href="{{.Permalink}}">
       <img src="https://i.imgur.com/MikIQWD.png">
     </a>
+    </center>
     {{end}}
   </div>
 </div>
