@@ -148,12 +148,9 @@
   </div>
 
   <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='/program/9';">
-    <div class="h-32 pt-20">
-      <hr/>
+    <div class="h-32 pt-6">
+      <canvas id="wave_program_9" width="400" height="80"></canvas>
     </div>
-    <!-- <div class="h-32 pt-6">
-         <canvas id="wave_program_9" width="400" height="80"></canvas>
-         </div> -->
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
         <a href="/program/9">
@@ -162,6 +159,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
     </div>
   </div>
 
@@ -237,6 +235,40 @@
    ctx.stroke();
    ctx.save();
  }
+
+ function plotSequence2(ctx, xOffset, yOffset) {
+   var width = ctx.canvas.width;
+   var height = ctx.canvas.height;
+
+   ctx.beginPath();
+   ctx.lineWidth = 2;
+   ctx.strokeStyle = "rgb(255,0,255)";
+
+   var x = 0;
+   var y = 0;
+   var amplitude = 50;
+   var sequence = [-0.8, 1.6, -2.0, 1.2, -1.8, 1.0, -0.8, 1.6, -2.0, 1.2, -1.8, 1.0] ;
+
+   var y_s = 0;
+   var i = 0;
+   /* var x_ds = [24, 32, 16]; */
+   var x_d = 20;
+   // choose random item
+   /* x_d = x_ds[Math.floor(Math.random()*x_ds.length)]; */
+
+   while (x < width + x_d) {
+     y_s = sequence[parseInt((i+xOffset)%12)];
+     y = height/2 + amplitude * y_s;
+
+     ctx.moveTo(x-x_d, height/2 + yOffset);
+     ctx.quadraticCurveTo(x-(x_d/2), y, x, height/2 + yOffset);
+
+     x = x+x_d;
+     i = i+1;
+   }
+   ctx.stroke();
+   ctx.save();
+ } 
 
  function plotSine(ctx, xOffset, yOffset) {
    var width = ctx.canvas.width;
@@ -552,11 +584,11 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSquareWave(context, step, 1);
+     plotSequence2(context, step, 1);
      context.restore();
 
      window.requestAnimationFrame(drawSquareWave);
-   }, 1000 / 30);
+   }, 6000 / 30);
  }
 
  function drawStepWave() {
@@ -584,7 +616,7 @@
    window.requestAnimationFrame(drawFourierSeries);
    window.requestAnimationFrame(drawSineWave2); // 5
    window.requestAnimationFrame(drawStepWave); // 8
-   /* window.requestAnimationFrame(drawSquareWave); // 9 */
+   window.requestAnimationFrame(drawSquareWave); // 9
    window.requestAnimationFrame(drawSequence); // 7
  }
  var step = -1;
@@ -601,8 +633,8 @@
  }
 
 
- /* var program_9_canvas = document.getElementById('wave_program_9');
-  * fitToContainer(program_9_canvas); */
+ var program_9_canvas = document.getElementById('wave_program_9');
+ fitToContainer(program_9_canvas);
 
  var program_8_canvas = document.getElementById('wave_program_8');
  fitToContainer(program_8_canvas);
