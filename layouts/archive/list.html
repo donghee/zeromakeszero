@@ -16,7 +16,11 @@
       </a>
 
       <a href="{{.Permalink}}">
+        {{if .Params.extra }}
+        <h4 class="m-4">사진/영상/결과물 보기</h4>
+        {{ else }}
         <h4 class="m-4">사진/영상 보기</h4>
+        {{ end }}
       </a>
     </div>
     {{ end }}

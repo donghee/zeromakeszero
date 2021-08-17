@@ -32,6 +32,10 @@
         <a href="{{ .Params.webzine_link_2 }}"> <span class="lg:ml-16 lg:pl-3"> https://0makes0.com/{{ .Params.webzine_link_2 }}</span> </a>
         <br/>
         {{ end }}
+        {{if .Params.extra_link }}
+        <a href="{{ .Params.extra_link }}"> <span> {{ .Params.extra_desc }} {{ .Params.extra_link }}</span> </a>
+        <br/>
+        {{ end }}
       </li>
       <ul>
   </div>
@@ -50,30 +54,36 @@
 </div>
 
 <div class="max-w-screen-xl m-auto flex items-center text-xl leading-10 border-black border-2 p-6 my-8">
-  <div class="flex-1">
+  <div class="flex-1 flex justify-center">
     {{with .PrevInSection}}
     <a href="{{.Permalink}}">
       <img src="https://imgur.com/FqfR7v4.png">
     </a>
     {{end}}
   </div>
-  <div class="flex-1 text-left">
+  <div class="flex-1 text-left m-2">
     {{with .PrevInSection}}
-    <span class="font-semibold">이전 </span>
+    <span class="font-semibold">이전 아카이브</span>
     {{end}}
-    <br/> {{with .PrevInSection}}{{.Title}}{{end}}
+    <br/>
+    <span class="hidden lg:block">
+      {{with .PrevInSection}}{{.Title}}{{end}}
+    </span>
   </div>
-  <div class="flex-auto">
+  <div class="hidden lg:block flex-auto">
   </div>
-  <div class="w-1/12 flex-auto">
+  <div class="flex-1 text-right m-2">
     {{with .NextInSection}}
-    <span class="font-semibold">다음 </span>
+    <span class="font-semibold">다음 아카이브</span>
     {{end}}
-    <br/> {{with .NextInSection}}{{.Title}}{{end}}
+    <br/>
+    <span class="hidden lg:block">
+      {{with .NextInSection}}{{.Title}}{{end}}
+    </span>
   </div>
-  <div class="flex-none">
+  <div class="flex-1 flex justify-center">
     {{with .NextInSection}}
-    <a href="{{.Permalink}}">
+    <a class="" href="{{.Permalink}}">
       <img src="https://i.imgur.com/MikIQWD.png">
     </a>
     {{end}}
