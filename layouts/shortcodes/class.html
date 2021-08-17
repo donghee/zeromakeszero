@@ -1,4 +1,4 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-<div class="{{ .Get 0 }}">
+<div class="{{ .Get 0 }} {{ .Get 1 }}">
   {{ .Inner }}
 </div>

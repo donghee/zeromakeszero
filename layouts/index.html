@@ -1,5 +1,63 @@
 {{ define "main" }}
 
+<style>
+ .overlay {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transition: opacity 100ms;
+   visibility: visible;
+   opacity: 1;
+ }
+ .overlay:target {
+   visibility: hidden;
+   opacity: 0;
+   display: none;
+ }
+
+ .popup {
+   margin: 20px auto;
+   padding: 20px;
+   /* background: #fff; */
+   border-radius: 5px;
+   /* width: 90%; */
+   position: relative;
+   transition: all 1s ease-in-out;
+   opacity: 1;
+ }
+
+ .popup h2 {
+   margin-top: 0;
+   color: #333;
+   font-family: Tahoma, Arial, sans-serif;
+ }
+ .popup .close {
+   position: absolute;
+   top: 50px;
+   right: 40px;
+   transition: all 200ms;
+   font-size: 30px;
+   font-weight: bold;
+   text-decoration: none;
+   color: #FF00FF;
+ }
+
+ .popup .close:hover {
+   color: #000000;
+ }
+</style>
+
+<div id="popup1" class="lg:max-w-screen-sm m-auto overlay z-50 close" >
+  <div class="popup">
+    <a href="/program/10">
+      <img class="mt-5 border-4" src="/images/festival_popup.jpg" alt="제로의 예술 페스티벌 자세한 내용 보러가기" style="border-color: #FF00FF">
+    </a>
+    <a class="close" href="#popup1">&times;</a>
+  </div>
+</div>
+
 <div class="lg:flex lg:h-64">
 
   <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2  lg:border-black lg:border-r-2 hover:bg-gray-100" onclick="location.href='/program/2';">
@@ -23,34 +81,34 @@
 
   <div class="lg:w-1/5 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2 hover:bg-gray-100"  onclick="location.href='/program/1';">
     <div class="h-40 pt-6">
-         <canvas id="wave_program_1" width="600" height="80"></canvas>
-         </div> 
-         <!--
-    <div class="h-40 pt-20">
-      <hr/>
-    </div>
-         -->
+      <canvas id="wave_program_1" width="600" height="80"></canvas>
+    </div> 
+    <!--
+         <div class="h-40 pt-20">
+         <hr/>
+         </div>
+    -->
     <div class="text-left ml-10 m-auto">
-        <div class="font-semibold mb-1">
-          <a href="/program/1">
-            자기기록: 듣기와 쓰기
-          </a>
+      <div class="font-semibold mb-1">
+        <a href="/program/1">
+          자기기록: 듣기와 쓰기
+        </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span> -->
-      </div>
+    </div>
   </div>
 
   <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2 hover:bg-gray-100"  onclick="location.href='/program/3';">
-  <!-- <div class="h-40 pt-8 bg-center bg-repeat-x" style="background-image: url(/images/wave_active_1.png)"> </div> -->
-  <!-- <span class="mt-2 ml-2 rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs" style="float:left;clear:both; overflow:auto;">모집중</span> -->
-  <div class="h-40 pt-10">
-    <canvas id="wave_program_3" width="600" height="80"></canvas>
-  </div>
-  <!-- <div class="h-40 pt-20">
-       <hr/>
-       </div> -->
+    <!-- <div class="h-40 pt-8 bg-center bg-repeat-x" style="background-image: url(/images/wave_active_1.png)"> </div> -->
+    <!-- <span class="mt-2 ml-2 rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs" style="float:left;clear:both; overflow:auto;">모집중</span> -->
+    <div class="h-40 pt-10">
+      <canvas id="wave_program_3" width="600" height="80"></canvas>
+    </div>
+    <!-- <div class="h-40 pt-20">
+         <hr/>
+         </div> -->
     <div class="text-left ml-10 m-auto">
       <div class="font-semibold mb-1">
         <a href="/program/3">
@@ -61,7 +119,7 @@
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">서울</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
-</div>
+  </div>
 
 </div>
 
@@ -143,7 +201,7 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">온라인</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span> -->
     </div>
   </div>
 
@@ -159,13 +217,13 @@
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
-      <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span>
+      <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span> -->
     </div>
   </div>
 
   <div class="lg:w-4/12 pb-4 lg:pb-0  hover:bg-gray-100"  onclick="location.href='/program/10';">
-    <div class="h-32 pt-20">
-      <hr/>
+    <div class="h-32 pt-6">
+      <canvas id="wave_program_10" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
@@ -242,7 +300,7 @@
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = "rgb(0,0,0)";
 
    var x = 0;
    var y = 0;
@@ -270,14 +328,14 @@
    ctx.save();
  } 
 
- function plotSine(ctx, xOffset, yOffset) {
+ function plotSine(ctx, xOffset, yOffset, color) {
    var width = ctx.canvas.width;
    var height = ctx.canvas.height;
    var scale = 20;
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(0,0,0)";
+   ctx.strokeStyle = (color || "rgb(0,0,0)");
 
    var x = 4;
    var y = 0;
@@ -318,7 +376,7 @@
  function rainbow(value, s, l, max, min, start, end) {
    value = ((value - min) * (start - end) / max)+end;
    console.log(value);
-    return 'hsl(' + value + ','+s+'%,'+l+'%)';
+   return 'hsl(' + value + ','+s+'%,'+l+'%)';
  }
 
  function plotSawtooth(ctx, xOffset, yOffset) {
@@ -343,13 +401,13 @@
    ctx.save();
  }
 
- function plotSawtooth2(ctx, xOffset, yOffset) {
+ function plotSawtooth2(ctx, xOffset, yOffset, color) {
    var width = ctx.canvas.width;
    var height = ctx.canvas.height;
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(0,0,0)";
+   ctx.strokeStyle = (color || "rgb(0,0,0)");
 
    var x = 4;
    var y = 0;
@@ -365,13 +423,14 @@
  }
 
 
- function plotStepWave(ctx, xOffset, yOffset) {
+ function plotStepWave(ctx, xOffset, yOffset, color) {
    var width = ctx.canvas.width;
    var height = ctx.canvas.height;
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = (color || "rgb(0,0,0)");
+
    var x = 4;
    var y = 0;
    var step = 48; // step width
@@ -386,13 +445,14 @@
  }
 
 
- function plotSquareWave(ctx, xOffset, yOffset) {
+ function plotSquareWave(ctx, xOffset, yOffset, color) {
    var width = ctx.canvas.width;
    var height = ctx.canvas.height;
 
    ctx.beginPath();
    ctx.lineWidth = 2;
-   ctx.strokeStyle = "rgb(255,0,255)";
+   ctx.strokeStyle = (color || "rgb(0,0,0)");
+
    var x = 4;
    var y = 0;
    while (x < width) {
@@ -602,9 +662,26 @@
      plotStepWave(context, step*0.5, 1);
      context.restore();
 
- /*    step += 1; */
+     /*    step += 1; */
 
      window.requestAnimationFrame(drawStepWave);
+   }, 1000 / 30);
+ }
+
+ function drawMultiGraph() {
+   var canvas = document.getElementById("wave_program_10");
+   var context = canvas.getContext("2d");
+
+   setTimeout(function() {
+     context.clearRect(0, 0, canvas.width, canvas.height);
+     context.save();
+
+     plotSine(context, step*2, 0, "rgb(255,0,255)");
+     plotSawtooth2(context, step*4, 0, "rgb(163,255,0)");
+     plotStepWave(context, step, 1, "rgb(59,0,255)");
+     context.restore();
+
+     window.requestAnimationFrame(drawMultiGraph);
    }, 1000 / 30);
  }
 
@@ -618,6 +695,7 @@
    window.requestAnimationFrame(drawStepWave); // 8
    window.requestAnimationFrame(drawSquareWave); // 9
    window.requestAnimationFrame(drawSequence); // 7
+   window.requestAnimationFrame(drawMultiGraph); // 10
  }
  var step = -1;
 
@@ -632,6 +710,8 @@
    _canvas.height = _canvas.offsetHeight;
  }
 
+ var program_10_canvas = document.getElementById('wave_program_10');
+ fitToContainer(program_10_canvas);
 
  var program_9_canvas = document.getElementById('wave_program_9');
  fitToContainer(program_9_canvas);
