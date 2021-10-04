@@ -6,22 +6,24 @@
   "scripts": {
     "tailwind": "postcss css/tailwind.css -o static/css/tailwind.css",
     "hugo": "hugo",
-    "shorten": "netlify-shortener"
+    "shorten": "netlify-shortener",
+    "start": "nodemon app/app.js"
   },
   "dependencies": {
-    "autoprefixer": "^10.1.0",
-    "koa": "^2.13.0",
+    "autoprefixer": "^10.2.6",
+    "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-ejs": "^4.3.0",
     "koa-router": "^9.4.0",
     "live-server": "^1.2.1",
-    "mongoose": "^5.10.9",
-    "postcss": "^8.2.8",
+    "mongoose": "^5.12.13",
+    "postcss": "^8.3.2",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.4"
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
-    "netlify-shortener": "^2.3.0"
+    "netlify-shortener": "^2.4.0",
+    "nodemon": "^2.0.12"
   },
   "keywords": [],
   "author": "",

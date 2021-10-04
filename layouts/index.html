@@ -47,14 +47,28 @@
  .popup .close:hover {
    color: #000000;
  }
+
+ /* .popup .arko {
+    position: absolute;
+    top: 340px;
+    right: 40px;
+    width: 100px;
+    }
+  */
 </style>
 
-<div id="popup1" class="lg:max-w-screen-sm m-auto overlay z-50 close" >
+<div id="popup-off" class="lg:max-w-screen-sm m-auto overlay z-50 close" >
   <div class="popup">
-    <a href="/program/10">
-      <img class="mt-5 border-4" src="/images/festival_popup.jpg" alt="제로의 예술 페스티벌 자세한 내용 보러가기" style="border-color: #FF00FF">
+    <!-- <a href="/program/10">
+         <img class="mt-5 border-4" src="/images/festival_popup.jpg" alt="제로의 예술 페스티벌 자세한 내용 보러가기" style="border-color: #FF00FF">
+         </a> -->
+    <a href="https://wiki.0makes0.com/wiki">
+      <div class="bg-white mt-5 border-4" style="border-color: #FF00FF">
+        <img src="https://wiki.0makes0.com/uploads/0makes0_%EB%B9%84%EA%B1%B0%EB%8B%88%EC%A6%98%EB%A7%A4%EB%89%B4%EC%96%BC_image_square.png" alt="비거니즘 전시 매뉴얼 위키 바로가기" style="border-color: #FF00FF">
+        <!-- <img src="https://freight.cargo.site/t/original/i/abcd0824382cdb1e6c2efca6e3d5ae4dd8fc33f6ed88bddbfa25923073865abf/12313123100.png" class="arko sm:mt-48 sm:pt-8"> -->
+      </div>
     </a>
-    <a class="close" href="#popup1">&times;</a>
+    <a class="close" href="#popup-off">&times;</a>
   </div>
 </div>
 
@@ -676,9 +690,12 @@
      context.clearRect(0, 0, canvas.width, canvas.height);
      context.save();
 
-     plotSine(context, step*2, 0, "rgb(255,0,255)");
-     plotSawtooth2(context, step*4, 0, "rgb(163,255,0)");
-     plotStepWave(context, step, 1, "rgb(59,0,255)");
+     /* plotSine(context, step*2, 0, "rgb(255,0,255)");
+      * plotSawtooth2(context, step*4, 0, "rgb(163,255,0)");
+      * plotStepWave(context, step, 1, "rgb(59,0,255)"); */
+     plotSine(context, step*2, 0, "rgb(0,0,0)");
+     plotSawtooth2(context, step*4, 0, "rgb(0,0,0)");
+     plotStepWave(context, step, 1, "rgb(0,0,0)");
      context.restore();
 
      window.requestAnimationFrame(drawMultiGraph);
