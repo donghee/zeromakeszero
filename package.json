@@ -5,12 +5,13 @@
   "homepage": "https://u.0makes0.com",
   "scripts": {
     "tailwind": "postcss css/tailwind.css -o static/css/tailwind.css",
-    "hugo": "hugo",
+    "hugo": "HUGO_ENVIRONMENT=production yarn tailwind; hugo",
     "shorten": "netlify-shortener",
     "start": "nodemon app/app.js"
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
+    "dotenv": "^16.0.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-ejs": "^4.3.0",
