@@ -4,6 +4,22 @@ title = "Zero Makes Zero"
 summaryLength = "10"
 googleAnalytics = "UA-180203838-1"
 
+defaultContentLanguage = 'ko'
+DefaultContentLanguage = 'ko'
+hasCJKLanguage = true
+staticDir = 'static'
+
+[languages]
+  [languages.ko]
+  baseURL = 'https://0makes0.com/'
+  languageName = "한글"
+  weight = 1
+
+  [languages.en]
+  baseURL = 'https://0makes0.com/en'
+  languageName = "English"
+  weight = 2
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

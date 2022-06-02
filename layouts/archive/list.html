@@ -2,7 +2,11 @@
 
 <div class="flex">
   <div class="h-2 mx-auto mt-4 mb-20">
-    <a href="/archive/"> <span>아카이브</span></a>
+    <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/archive/">
+      <span>
+        {{ if eq .Language.Lang "ko" }} 아카이브 {{ else }} Archive {{ end }}
+      </span>
+    </a>
   </div>
 </div>
 
@@ -12,14 +16,28 @@
     <div class="text-xl border-black border-2 p-4 m-2">
       <a href="{{.Permalink}}">
         <img class="p-4" src="{{ .Params.banner }}">
-        <h2 class="font-semibold m-4">{{.Title}} 아카이브</h2>
+        <h2 class="font-semibold m-4">{{.Title}} 
+        {{ if eq .Language.Lang "ko" }} 아카이브 {{ else }} Archive {{ end }}
+        </h2>
       </a>
 
       <a href="{{.Permalink}}">
         {{if .Params.extra }}
-        <h4 class="m-4">사진/영상/결과물 보기</h4>
+        <h4 class="m-4">
+        {{ if eq .Language.Lang "ko" }} 
+          사진/영상/결과물 보기
+        {{ else }} 
+          Photo/Video/Result 
+        {{ end }}
+        </h4>
         {{ else }}
-        <h4 class="m-4">사진/영상 보기</h4>
+        <h4 class="m-4">
+        {{ if eq .Language.Lang "ko" }} 
+          사진/영상 보기
+        {{ else }} 
+          Photo/Video
+        {{ end }}
+        </h4>
         {{ end }}
       </a>
     </div>

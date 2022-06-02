@@ -19,7 +19,7 @@
         </div>
         <div class="flex flex-row justify-between">
           <div>
-            <a href="/">
+            <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/">
               <!-- <img class="h-8" src="/images/logo.svg" alt="Zero Makes Zero"> -->
               <img class="h-10 md:h-10" src="/images/zeromakeszero-logo.svg" alt="Zero Makes Zero">
             </a>
@@ -36,10 +36,37 @@
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-base lg:flex-grow">
               <!-- <div class="text-base "> -->
-              <a href="/introduce" class="{{ if eq .Section "introduce" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>소개</span></a>
-              <a href="/program" class="{{ if eq .Section "program" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>프로그램</span></a>
-              <a href="/webzine" class="{{ if eq .Section "webzine" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0"><span>웹진</span></a>
-              <a href="/archive" class="{{ if eq .Section "archive" }} line-through {{ end }} font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>아카이브</span></a>
+                <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/introduce" class="{{ if eq .Section "introduce" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>
+                  {{ if eq .Language.Lang "ko" }}
+                  소개
+                  {{ else }}
+                  Introduce
+                  {{ end }}
+                </span></a>
+                <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program" class="{{ if eq .Section "program" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4"><span>
+                  {{ if eq .Language.Lang "ko" }}
+                  프로그램
+                  {{ else }}
+                  Program
+                  {{ end }}
+                </span></a>
+                {{ if eq .Language.Lang "ko" }}
+                <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/webzine" class="{{ if eq .Section "webzine" }} line-through {{ end }} pr-5 font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0"><span>
+                  웹진
+                </span></a>
+                {{ end }}
+                <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/archive" class="{{ if eq .Section "archive" }} line-through {{ end }} font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>
+                  {{ if eq .Language.Lang "ko" }}
+                  아카이브
+                  {{ else }}
+                  Archive
+                  {{ end }}
+                </span></a>
+              {{ if eq .Language.Lang "ko" }}
+              <a href="/en/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>English</span></a>
+              {{ else }}
+              <a href="/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>한글</span></a>
+              {{ end }}
               <!-- </div> -->
             </div>
           </div>

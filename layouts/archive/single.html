@@ -2,7 +2,11 @@
 
 <div class="flex">
   <div class="h-2 mx-auto mt-4 mb-20">
-    <a href="/archive/"> <span>아카이브</span></a>
+    <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/archive/">
+      <span>
+        {{ if eq .Language.Lang "ko" }} 아카이브 {{ else }} Archive {{ end }}
+      </span>
+    </a>
   </div>
 </div>
 

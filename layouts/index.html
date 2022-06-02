@@ -74,7 +74,7 @@
 
 <div class="lg:flex lg:h-64">
 
-  <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2  lg:border-black lg:border-r-2 hover:bg-gray-100" onclick="location.href='/program/2';">
+  <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2  lg:border-black lg:border-r-2 hover:bg-gray-100" onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/2';">
     <div class="h-40 pt-6">
       <canvas id="wave_program_2" width="600" height="80"></canvas>
     </div>
@@ -83,17 +83,21 @@
          </div> -->
     <div class="text-left ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/2">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/2">
+          {{ if eq .Language.Lang "ko" }}
           모든 몸을 위한 발레
+          {{ else }}
+          Ballet for All Bodies
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 10 - 12</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울{{ else }}Gwangju/Seoul{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span> -->
     </div>
   </div>
 
-  <div class="lg:w-1/5 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2 hover:bg-gray-100"  onclick="location.href='/program/1';">
+  <div class="lg:w-1/5 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2 hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/1';">
     <div class="h-40 pt-6">
       <canvas id="wave_program_1" width="600" height="80"></canvas>
     </div> 
@@ -104,17 +108,21 @@
     -->
     <div class="text-left ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/1">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/1">
+          {{ if eq .Language.Lang "ko" }}
           자기기록: 듣기와 쓰기
+          {{ else }}
+          Self-documentation: Listening and Writing
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울{{ else }}Gwangju/Seoul{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감(광주/서울)</span> -->
     </div>
   </div>
 
-  <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2 hover:bg-gray-100"  onclick="location.href='/program/3';">
+  <div class="lg:w-2/5 pb-4 lg:pb-0 border-black border-b-2 hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/3';">
     <!-- <div class="h-40 pt-8 bg-center bg-repeat-x" style="background-image: url(/images/wave_active_1.png)"> </div> -->
     <!-- <span class="mt-2 ml-2 rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs" style="float:left;clear:both; overflow:auto;">모집중</span> -->
     <div class="h-40 pt-10">
@@ -125,12 +133,16 @@
          </div> -->
     <div class="text-left ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/3">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/3">
+          {{ if eq .Language.Lang "ko" }}
           예술육아소셜클럽
+          {{ else }}
+          Social Club for Parenting Artists
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 10 - 2021. 3</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">서울</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}서울{{ else }}Seoul{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
@@ -138,115 +150,143 @@
 </div>
 
 <div class="lg:flex lg:h-64">
-  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/4';">
+  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/4';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_4" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/4">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/4">
+          {{ if eq .Language.Lang "ko" }}
           퀴어-되기
+          {{ else }}
+          Becoming_Queer
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2020. 11 - 12</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주{{ else }}Gwangju{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
 
-  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/6';">
+  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/6';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_6" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/6">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/6">
+          {{ if eq .Language.Lang "ko" }}
           10대 기술 말하기
+          {{ else }}
+          Teen Tech Talk
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 1 - 2</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울/온라인{{ else }}Gwangju/Seoul/Online{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
 
-  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='/program/5';">
+  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2 lg:border-black lg:border-r-2  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/5';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_5" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/5">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/5">
+          {{ if eq .Language.Lang "ko" }}
           섬: 시티
+          {{ else }}
+          Sum: City
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 2 - 3</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}온라인{{ else }}Online{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">신청마감</span> -->
     </div>
   </div>
 
-  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2  hover:bg-gray-100" onclick="location.href='/program/7';">
+  <div class="lg:w-3/12 pb-4 lg:pb-0 border-black border-b-2  hover:bg-gray-100" onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/7';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_7" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/7">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/7">
+          {{ if eq .Language.Lang "ko" }}
           우리는 오늘도 내일을 끌어 쓴다
+          {{ else }}
+          Yesterday’s Tomorrow
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 4</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울/온라인{{ else }}Gwangju/Seoul/Online{{ end }}</span>
     </div>
   </div>
 </div>
 
 <div class="lg:flex lg:h-64">
-  <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='/program/8';">
+  <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/8';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_8" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 lg:ml-20 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/8">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/8">
+          {{ if eq .Language.Lang "ko" }}
           박물관 미술관 동물원
+          {{ else }}
+          Museum, Art Museum, Zoo
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}온라인{{ else }}Online{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span> -->
     </div>
   </div>
 
-  <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='/program/9';">
+  <div class="lg:w-4/12 pb-4 lg:pb-0 border-black lg:border-r-2 border-b-2 lg:border-b-0  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/9';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_9" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/9">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/9">
+          {{ if eq .Language.Lang "ko" }}
           무엇을 무엇으로 만들까
+          {{ else }}
+          What to Make; How to Make
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 5</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울/온라인{{ else }}Gwangju/Seoul/Online{{ end }}</span>
       <!-- <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-xs">모집중</span> -->
     </div>
   </div>
 
-  <div class="lg:w-4/12 pb-4 lg:pb-0  hover:bg-gray-100"  onclick="location.href='/program/10';">
+  <div class="lg:w-4/12 pb-4 lg:pb-0  hover:bg-gray-100"  onclick="location.href='{{ if eq .Language.Lang "en" }}/en{{ end }}/program/10';">
     <div class="h-32 pt-6">
       <canvas id="wave_program_10" width="400" height="80"></canvas>
     </div>
     <div class="text-left mt-8 ml-10 m-auto">
       <div class="font-semibold mb-1">
-        <a href="/program/10">
+        <a href="{{ if eq .Language.Lang "en" }}/en{{ end }}/program/10">
+          {{ if eq .Language.Lang "ko" }}
           제로의 예술 페스티벌
+          {{ else }}
+          Zero Makes Zero Festival
+          {{ end }}
         </a>
       </div>
       <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">2021. 8</span>
-      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">광주/서울/온라인</span>
+      <span class="rounded-full py-1 px-2 border-gray-800 border text-xs">{{ if eq .Language.Lang "ko" }}광주/서울/온라인{{ else }}Gwangju/Seoul/Online{{ end }}</span>
     </div>
   </div>
 </div>
