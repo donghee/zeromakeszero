@@ -1,6 +1,9 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = new Koa();
 app.use(bodyParser());
@@ -27,6 +30,18 @@ const _answers = mongoose.model('answers', new mongoose.Schema({
   q: 'string',
   a: 'string',
   date: { type: Date, default: Date.now },
+}));
+
+const _postIts = mongoose.model('postits', new mongoose.Schema({
+  type: 'string',
+  coordinate: [],
+  message: 'string',
+  name: 'string',
+  password: { type: 'string', select: false },
+  pin: 'string',
+  color: 'string',
+  area : 'string',
+  date: { type: Date, default: Date.now }
 }));
 
 const questions = [
@@ -81,11 +96,67 @@ router.post('/', async (ctx) => {
   });
 });
 
-
 router.get('/answers', async (ctx) => {
   var answers = await _answers.find({});
   await ctx.render('answers', {
     answers
+  });
+});
+
+router.get('/be-queer/post-its', async (ctx) => {
+  console.log('list post it')
+  var postIts = await _postIts.find({});
+  ctx.body = postIts;
+});
+
+router.post('/be-queer/create', async (ctx) => {
+  console.log('create post it')
+  const postIt = new _postIts(ctx.request.body);
+  await postIt.save(function (err) {
+    if (err) return console.error(err);
+  });
+  ctx.body = { status: 'success', postIt };
+});
+
+router.post('/be-queer/update', async (ctx) => {
+  console.log('edit post it')
+  const postIt = ctx.request.body;
+  const _postIt = await _postIts.findById(postIt._id).select('+password').exec();
+  if (process.env.password !== postIt.password && _postIt.password !== postIt.password) {
+    ctx.body = { status: 'error' };
+    return;
+  }
+
+  await _postIts.findByIdAndUpdate(postIt._id, postIt, function (err) {
+    if (err) return console.error(err);
+  });
+  ctx.body = { status: 'success', postIt };
+});
+
+router.post('/be-queer/remove', async (ctx) => {
+  console.log('remove post it')
+  const postIt = ctx.request.body;
+  const _postIt = await _postIts.findById(postIt._id).select('+password').exec();
+  if ('0makes0' !== postIt.password && _postIt.password !== postIt.password) {
+    ctx.body = { status: 'error' };
+    return;
+  }
+
+  await _postIts.findByIdAndRemove(postIt._id, (err, _postIt) => {
+    if (err) {
+      ctx.body = { status: 'error', err };
+      return;
+    }
+    console.log(_postIt);
+    ctx.body = { status: 'success', _id: _postIt._id };
+  });
+});
+
+router.get('/be-queer', async (ctx) => {
+  console.log('be-queer')
+  const question = questions[Math.floor(Math.random()*questions.length)];
+  await ctx.render('be-queer', {
+    question
   });
 });
 
