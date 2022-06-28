@@ -20,12 +20,12 @@
   </h1>
 
   <div class="lg:m-8 text-lg leading-10">
-   <br/>
+    <br/>
     {{ .Content }}
     <br/>
     <ul>
       <li>
-        <a href="{{ .Params.program_link }}"> <span>프로그램 설명 https://0makes0.com{{ .Params.program_link }}</span> </a>
+        <a href="{{ .Params.program_link }}"> <span> {{ .Param "description" }} https://0makes0.com{{ .Params.program_link }}</span> </a>
         <br/>
 
         {{if .Params.webzine_link }}
@@ -46,10 +46,10 @@
 
   <div class="lg:m-8 text-lg leading-10">
     {{if .Params.photo_by }}
-    사진: {{ .Params.photo_by }}
+    {{ .Param "photo" }}: {{ .Params.photo_by }}
     {{ end }}
     <br/>
-    영상: {{ .Params.video_by }}
+    {{ .Param "video" }}: {{ .Params.video_by }}
   </div>
   <br/>
 
@@ -67,7 +67,7 @@
   </div>
   <div class="flex-1 text-left m-2">
     {{with .PrevInSection}}
-    <span class="font-semibold">이전 아카이브</span>
+    <span class="font-semibold">{{ .Param "previous"}} {{ .Param "archive"}}</span>
     {{end}}
     <br/>
     <span class="hidden lg:block">
@@ -78,7 +78,7 @@
   </div>
   <div class="flex-1 text-right m-2">
     {{with .NextInSection}}
-    <span class="font-semibold">다음 아카이브</span>
+    <span class="font-semibold">{{ .Param "next"}} {{ .Param "archive"}}</span>
     {{end}}
     <br/>
     <span class="hidden lg:block">

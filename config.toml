@@ -1,19 +1,32 @@
+DefaultContentLanguage = 'ko'
 baseURL = "https://0makes0.com/"
-languageCode = "en-us"
+#languageCode = "en-us"
 title = "Zero Makes Zero"
 summaryLength = "10"
 googleAnalytics = "UA-180203838-1"
 
-defaultContentLanguage = 'ko'
-DefaultContentLanguage = 'ko'
 hasCJKLanguage = true
 staticDir = 'static'
+
+[params]
+  archive = "archive"
+  next = "Next"
+  previous = "Previous"
+  photo = "Photo"
+  video = "Video"
+  description = "Description"
 
 [languages]
   [languages.ko]
   baseURL = 'https://0makes0.com/'
   languageName = "한글"
   weight = 1
+  archive = "아키이브"
+  next = "다음"
+  previous = "이전"
+  photo = "사진"
+  video = "영상"
+  description = "프로그램 설명"
 
   [languages.en]
   baseURL = 'https://0makes0.com/en'

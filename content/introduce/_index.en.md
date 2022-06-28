@@ -53,21 +53,21 @@ Zero Distance: We propose experiments and practices that can subvert the physica
 <p class="font-jejumyeongjo leading-10">
 'Zero' does not mean the state of 0 as nothing. It means that the distance between two points where the difference occurs is close to zero by recognizing each other’s existence of and becoming more proximite.
 </p>
-<img class="mb-20" src="/images/design_identity.png">
+<img class="mb-20" src="/images/design_identity_en.png">
 
-<p class="text-lg leading-10">
-아무것도 발생하지 않는 상태 / 팽팽한 긴장감 <br/>
-The state in which nothing happens /  tension <br/>
-<br/>
-파동: 존재의 인식 / A와 B에서 발생한 활동 <br/>
-Waves: Perception of Being / Activities from A and B <br/>
-<br/>
-제로의 모양: 내가 다른 지점에 위치한 누군가와 가까워지기 시작한, 파동이 발생하는 시점 <br/>
-Shape of zero: the point at which the wave begins, when we start getting closer to someone at a different point. <br/>
-<br/>
-제로의 색: 난색과 한색으로 정의하기 어려운 ‘차가운 붉은 색’ 채도가 높은 중간색 <br/>
-Color of Zero: ‘cold red’, a high-saturation neutral tone, which is difficult to define as either a warm or cold color. <br/>
-</p>
+<!-- <p class="text-lg leading-10"> -->
+<!-- 아무것도 발생하지 않는 상태 / 팽팽한 긴장감 <br/> -->
+<!-- The state in which nothing happens /  tension <br/> -->
+<!-- <br/> -->
+<!-- 파동: 존재의 인식 / A와 B에서 발생한 활동 <br/> -->
+<!-- Waves: Perception of Being / Activities from A and B <br/> -->
+<!-- <br/> -->
+<!-- 제로의 모양: 내가 다른 지점에 위치한 누군가와 가까워지기 시작한, 파동이 발생하는 시점 <br/> -->
+<!-- Shape of zero: the point at which the wave begins, when we start getting closer to someone at a different point. <br/> -->
+<!-- <br/> -->
+<!-- 제로의 색: 난색과 한색으로 정의하기 어려운 ‘차가운 붉은 색’ 채도가 높은 중간색 <br/> -->
+<!-- Color of Zero: ‘cold red’, a high-saturation neutral tone, which is difficult to define as either a warm or cold color. <br/> -->
+<!-- </p> -->
 <!-- <span class="text-lg font-semibold">디자인</span> <span class="text-lg">어라우드랩</span>  <br/> -->
 <!-- <p class="text-lg leading-10"> -->
 <!-- 어라우드랩은 디자인이라는 창작활동 속에서 우리가 놓치고 있는 부분들이 무엇인지 고민하며 우리사회에 필요한 가치를 더 많은 사람이 들을 수 있도록 실험하고 있다. <a href="http://aloud-lab.kr" target="_blank">aloud-lab.kr</a> -->

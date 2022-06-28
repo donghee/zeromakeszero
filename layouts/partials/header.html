@@ -63,9 +63,17 @@
                   {{ end }}
                 </span></a>
               {{ if eq .Language.Lang "ko" }}
-              <a href="/en/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>English</span></a>
+              <a href="/en/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4">
+                <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-sm">
+                  English
+                </span>
+              </a>
               {{ else }}
-              <a href="/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4"><span>한글</span></a>
+              <a href="/" class="font-semibold hover:text-gray-800 block mt-4 lg:inline-block lg:mt-0 mr-4">
+                <span class="rounded-full py-1 px-2 bg-black text-white border-gray-800 border text-sm">
+                  한글
+                </span>
+              </a>
               {{ end }}
               <!-- </div> -->
             </div>
