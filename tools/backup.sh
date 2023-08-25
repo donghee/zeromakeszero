@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo '----'
+echo '# zeromakeszero'
 echo `date -I -d 'today'`
 
 HOME=/home/donghee
