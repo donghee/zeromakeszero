@@ -1,65 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Layer_1"
-   x="0px"
-   y="0px"
-   viewBox="0 0 71.412065 50"
-   xml:space="preserve"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="YouTube_dark_icon (2017).svg"
-   width="71.412064"
-   height="50"><metadata
-     id="metadata33"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
-     id="defs31" /><sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="715"
-     id="namedview29"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="5.4355702"
-     inkscape:cx="30.091613"
-     inkscape:cy="15.29613"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_1" /><style
-     type="text/css"
-     id="style3">
-	.st0{fill:#FF0000;}
-	.st1{fill:#FFFFFF;}
-	.st2{fill:#282828;}
-</style><g
-     id="g5"
-     transform="scale(0.58823529,0.58823529)"><path
-       class="st0"
-       d="M 118.9,13.3 C 117.5,8.1 113.4,4 108.2,2.6 98.7,0 60.7,0 60.7,0 60.7,0 22.7,0 13.2,2.5 8.1,3.9 3.9,8.1 2.5,13.3 0,22.8 0,42.5 0,42.5 0,42.5 0,62.3 2.5,71.7 3.9,76.9 8,81 13.2,82.4 22.8,85 60.7,85 60.7,85 c 0,0 38,0 47.5,-2.5 5.2,-1.4 9.3,-5.5 10.7,-10.7 2.5,-9.5 2.5,-29.2 2.5,-29.2 0,0 0.1,-19.8 -2.5,-29.3 z"
-       id="path7"
-       inkscape:connector-curvature="0"
-       style="fill:#282828;fill-opacity:1" /><polygon
-       class="st1"
-       points="80.2,42.5 48.6,24.3 48.6,60.7 "
-       id="polygon9"
-       style="fill:#ffffff" /></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+ <path d="m-12.642-41.559s-0.19636-1.4047-0.8081-2.024c-0.77034-0.81565-1.6464-0.81565-2.0391-0.86096-2.8548-0.20391-7.1294-0.20391-7.1294-0.20391h-0.0076s-4.2746 0-7.1294 0.20391c-0.40027 0.04531-1.2688 0.05287-2.0391 0.86096-0.61174 0.61929-0.8081 2.024-0.8081 2.024s-0.20391 1.6464-0.20391 3.3004v1.5482c0 1.6464 0.20391 3.3004 0.20391 3.3004s0.19636 1.4047 0.8081 2.024c0.77789 0.81565 1.7899 0.78544 2.243 0.86852 1.6313 0.1586 6.9255 0.20391 6.9255 0.20391s4.2822-0.0076 7.1369-0.21146c0.40027-0.04531 1.2688-0.05287 2.0391-0.86096 0.61174-0.61929 0.8081-2.024 0.8081-2.024s0.20391-1.6464 0.20391-3.3004v-1.5482c0-1.654-0.20391-3.3004-0.20391-3.3004zm-12.091 6.714v-5.7247l5.5056 2.8699z" fill="#fff" stroke-width=".075523"/>
+ <g data-name="Layer 2">
+  <g id="back">
+   <path d="M6.18,34H27.82A6.21,6.21,0,0,0,34,27.77V6.23A6.21,6.21,0,0,0,27.82,0H6.18A6.21,6.21,0,0,0,0,6.23V27.77A6.21,6.21,0,0,0,6.18,34Zm.75-9a9.16,9.16,0,0,0,5.69-2,4.57,4.57,0,0,1-4.28-3.2,4.66,4.66,0,0,0,2.07-.08,4.62,4.62,0,0,1-3.68-4.53v-.06a4.47,4.47,0,0,0,2.08.58,4.62,4.62,0,0,1-2-3.84,4.67,4.67,0,0,1,.62-2.32,13,13,0,0,0,9.44,4.82,4.51,4.51,0,0,1-.12-1.05,4.58,4.58,0,0,1,7.93-3.16,8.88,8.88,0,0,0,2.9-1.12,4.59,4.59,0,0,1-2,2.56,8.92,8.92,0,0,0,2.63-.73,9.14,9.14,0,0,1-2.29,2.39c0,.2,0,.4,0,.6a13,13,0,0,1-20,11.06A9.69,9.69,0,0,0,6.93,25Z"/>
+  </g>
+  <path d="m6.18 34h21.64c3.4258-0.01653 6.1911-2.8042 6.18-6.23v-21.54c0.011073-3.4258-2.7542-6.2135-6.18-6.23h-21.64c-3.4258 0.016532-6.1911 2.8042-6.18 6.23v21.54c-0.011073 3.4258 2.7542 6.2135 6.18 6.23z"/>
+  <path d="m29.539 11.86s-0.247-1.767-1.0165-2.546c-0.969-1.026-2.071-1.026-2.565-1.083-3.591-0.2565-8.968-0.2565-8.968-0.2565h-0.0095s-5.377 0-8.968 0.2565c-0.5035 0.057-1.596 0.0665-2.565 1.083-0.7695 0.779-1.0165 2.546-1.0165 2.546s-0.2565 2.071-0.2565 4.1515v1.9475c0 2.071 0.2565 4.1515 0.2565 4.1515s0.247 1.767 1.0165 2.546c0.9785 1.026 2.2515 0.988 2.8215 1.0925 2.052 0.1995 8.7115 0.2565 8.7115 0.2565s5.3865-0.0095 8.9775-0.266c0.5035-0.057 1.596-0.0665 2.565-1.083 0.7695-0.779 1.0165-2.546 1.0165-2.546s0.2565-2.071 0.2565-4.1515v-1.9475c0-2.0805-0.2565-4.1515-0.2565-4.1515zm-15.21 8.4455v-7.201l6.9255 3.61z" fill="#fff" stroke-width=".095"/>
+ </g>
+</svg>
