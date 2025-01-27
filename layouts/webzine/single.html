@@ -2,10 +2,10 @@
 
 <div class="flex">
   <div class="h-2 mx-auto mt-4 mb-20">
-    <a class="mr-2" href="/webzine/vol1"><span>vol.1</span></a>
-    <a class="mr-2" href="/webzine/vol2"><span>vol.2</span></a>
-    <a class="mr-2" href="/webzine/vol3"><span>vol.3</span></a>
-    <a class="mr-2" href="/webzine/vol4"><span>vol.4</span></a>
+    <a class="mr-2 {{ if eq .Params.volume "vol.1" }}line-through{{ end }}" href="/webzine/vol1"><span>vol.1</span></a>
+    <a class="mr-2 {{ if eq .Params.volume "vol.2" }}line-through{{ end }}" href="/webzine/vol2"><span>vol.2</span></a>
+    <a class="mr-2 {{ if eq .Params.volume "vol.3" }}line-through{{ end }}" href="/webzine/vol3"><span>vol.3</span></a>
+    <a class="mr-2 {{ if eq .Params.volume "vol.4" }}line-through{{ end }}" href="/webzine/vol4"><span>vol.4</span></a>
   </div>
 </div>
 
