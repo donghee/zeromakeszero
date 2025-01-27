@@ -21,12 +21,13 @@ staticDir = 'static'
   baseURL = 'https://0makes0.com/'
   languageName = "한글"
   weight = 1
-  archive = "아키이브"
-  next = "다음"
-  previous = "이전"
-  photo = "사진"
-  video = "영상"
-  description = "프로그램 설명"
+  [languages.ko.params]
+    archive = "아카이브"
+    next = "다음"
+    previous = "이전"
+    photo = "사진"
+    video = "영상"
+    description = "프로그램 설명"
 
   [languages.en]
   baseURL = 'https://0makes0.com/en'
