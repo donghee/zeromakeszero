@@ -2,13 +2,11 @@ DefaultContentLanguage = 'ko'
 baseURL = "https://0makes0.com/"
 #languageCode = "en-us"
 title = "Zero Makes Zero"
-summaryLength = "10"
+summaryLength = "15"
 googleAnalytics = "UA-180203838-1"
 
 hasCJKLanguage = true
 staticDir = 'static'
-
-disablePathToLower = true
 
 [params]
   archive = "archive"
